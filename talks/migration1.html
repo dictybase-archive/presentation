@@ -45,20 +45,20 @@
 
 <section class="slide" id="architechture-image-slide">
 	<h2> Current architechture (As of today) </h2>
-	<img src="images/dictyBase_architecture/current.png" alt="architecture" width="850"
+	<img src="images/dictyBase_architecture/current.png" alt="architecture" width="1350"
 	height="800" style="border-color: black; border-style:solid;">
 </section>
 
 
 <section class="slide" id="architechture-image-slide2">
 	<h2> Architechture after multigenome release </h2>
-	<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="850"
+	<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="1350"
 	height="800" style="border-color: black; border-style:solid;">
 </section>
 
 
 <section class="slide" id="web-apps">
-	<h2>Web application(MVC)</h2>
+	<h2>Web applications (MVC)</h2>
 	<ul>
 		<li><h3>Gene page </h3></li>	
 		<li><h3>Publication/GO</h3></li>
@@ -76,33 +76,46 @@
 		<li><h3>Legacy curation tool</h3></li>
 		<li><h3>Phenotype tool</h3></li>
 		<li><h3>Blast webservice</h3></li>
-		<li><h3>Misc. interfaces (abstract submission,  est page etc ..)</h3></li>
+		<li><h3>Misc. interfaces (abstract submission,  EST page etc ..)</h3></li>
 	</ul>
 </section>
 
 <section class="slide" id="old-software">
-	<h2>Core software status</h2>
+	<h2>Old/outdated software</h2>
+	
+	<h3>Core software status</h3>
 	<ul>
 		<li><h3>OS (Ubuntu - Dapper Drake) - 6 yrs old (Unsupported)</h3></li>	
-		<li><h3>Perl 5.8.7 - 7 yrs old (Unsupported)</h3></li>
-		<li><h3>Class::DBI (core for dicty) - 8 yrs old (Not actively developed for last 8
-		years)</h3></li>
+		<li><h3>Perl 5.8.7 - 7 yrs old</h3></li>
+		<li><h3>Class::DBI (core for dicty) - 8 yrs old (Not actively developed)</h3></li>
 	</ul>
-</section>
-
-
-<section class="slide" id="old-software2">
-	<h2>Other software status</h3>
+	<h3>Other software status</h3>
 	<ul>
 		<li><h3>prototype.js (Phenotype tool) - 6 yrs old</h3></li>	
 		<li><h3>BioMart - 6 yrs old</h3></li>
-		<li><h3>Apollo - 5 yrs old (Not actively developed)</h3></li>
+		<li><h3>Apollo - 5 yrs old (dead)</h3></li>
 		<li><h3>BLAST binaries - 5 yrs old</h3></li>
 	</ul>
 </section>
 
+<section class="slide" id="architecture">
+	<h2>Chado data model</h2>
+	<table>
+		
+		<tr>
+			<td>
+				<img src="images/dictyBase_gene_model/single_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+			</td>
+			<td>
+				<img src="images/dictyBase_gene_model/multiple_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+			</td>
+		</tr>
+	</table>
+</section>
 
-<section class="slide" id="chado-data-model">
+<!-- <section class="slide" id="chado-data-model">
 	<h2>Chado data model</h3>
 	<img src="images/dictyBase_gene_model/single_gene_model.png" alt="architecture" width="850"
 	height="800" style="border-color: black; border-style:solid;">
@@ -112,18 +125,18 @@
 	<h2>Chado data model (curated ....)</h3>
 	<img src="images/dictyBase_gene_model/multiple_gene_model.png" alt="architecture" width="850"
 	height="800" style="border-color: black; border-style:solid;">
-</section>
+</section> -->
 
 <section class="slide" id="chado-data-model3">
 	<h2>Chado data model (curated isoforms....)</h3>
-	<img src="images/dictyBase_gene_model/isoform_gene_model.png" alt="architecture" width="850"
+	<img src="images/dictyBase_gene_model/isoform_gene_model.png" alt="architecture" width="1050"
 	height="800" style="border-color: black; border-style:solid;">
 </section>
 
 
 <section class="slide" id="chado-data-model4">
 	<h2>Chado data model (pseudogene ....)</h3>
-	<img src="images/dictyBase_gene_model/pseudogene.png" alt="architecture" width="850"
+	<img src="images/dictyBase_gene_model/pseudogene.png" alt="architecture" width="1050"
 	height="800" style="border-color: black; border-style:solid;">
 </section>
 
@@ -135,8 +148,26 @@
 	<ul>
 </section>
 
+<section class="slide" id="architecture">
+	<table>
+		<tr>
+			<th><h2> Running architecture </h2></th>
+			<th><h2> After migration </h2></th>
+		</tr>
+		<tr>
+			<td>
+				<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="850"
+					height="800" style="border-color: black; border-style:solid;">
+			</td>
+			<td>
+				<img src="images/dictyBase_architecture/after_migration.png" alt="architecture" width="850"
+					height="800" style="border-color: black; border-style:solid;">
+			</td>
+		</tr>
+	</table>
+</section>
 
-<section class="slide" id="architechture-image-slide3">
+<!-- <section class="slide" id="architechture-image-slide3">
 	<h2> Running architecture </h2>
 	<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="850"
 	height="800" style="border-color: black; border-style:solid;">
@@ -147,7 +178,7 @@
 	<h2> After migration </h2>
 	<img src="images/dictyBase_architecture/after_migration.png" alt="architecture" width="850"
 	height="800" style="border-color: black; border-style:solid;">
-</section>
+</section> -->
 
 <section class="slide" id="chado-data-model5">
 	<h2>  Data model after migration </h2>
@@ -172,30 +203,31 @@
 </section>
 
 <section class="slide" id="mig-proposal2">
-	<h2>Data/Database migration(Ora2Pg)</h2>
+	<h2>Data/Database migration (Ora2Pg)</h2>
 	<ul>
-		<li><h3>Pg architecture setup</h3></li>
-		<li><h3>Core genome data model(Ora) => GFF3 dump => Bulk load in Pg</h3></li>
-		<li><h3>Annotatio(Ora) => Free text dump => Load in Pg</h3></li>
-		<li><h3>Strains data(Ora) => dicty::Feature => Modware => Pg</h3></li>
+		<li><h3>Pg architecture setup </h3></li>
+		<li><h3>Core genome data model(Ora) -> GFF3 dump -> Bulk load in Pg (ETA: 2 weeks)</h3></li>
+		<li><h3>Annotation (Ora) -> Free text dump -> Load in Pg (ETA: 3 weeks)</h3></li>
+		<li><h3>Strains data (Ora) -> dicty::Feature -> Modware -> Pg (ETA: 2 weeks)</h3></li>
 	</ul>
 </section>
 
 <section class="slide" id="mig-proposal2">
-	<h2>Develope Modware components</h2>
+	<h2>Develop Modware components</h2>
 	<ul>
 		<li><h3>Core genome features</h3></li>
-		<li><h3>Strains/Pnenotype/Genotype ...</h3></li>
+		<li><h3>Strains/Phenotype/Genotype ...</h3></li>
+		<li><h3>ETA: 1.5 months</h3></li>
 	</ul>
 </section>
 
 <section class="slide" id="mig-proposal3">
 	<h2>CGI to MVC rewrite</h2>
 	<ul>
-		<li><h3>Phenotype tool</h3></li>
-		<li><h3>Stock center</h3></li>
-		<li><h3>Search</h3></li>
-		<li><h3>Blast webservice</h3></li>
+		<li><h3>Phenotype tool (ETA: 3 months)</h3></li>
+		<li><h3>Stock center (ETA: 2 months)</h3></li>
+		<li><h3>Search (ETA: 1 months)</h3></li>
+		<li><h3>Blast webservice (ETA: 2 weeks)</h3></li>
 	</ul>
 </section>
 
@@ -203,9 +235,10 @@
 <section class="slide" id="mig-proposal4">
 	<h2>Web application partial rewrite</h2>
 	<ul>
-		<li><h3>Gene page</h3></li>
-		<li><h3>Merge legacy curation tool into yulia's curation tool</h3></li>
-		<li><h3>Blast interface</h3></li>
+		<li><h3>Gene page (ETA: 1 month)</h3></li>
+		<li><h3>Merge legacy curation tool into Yulia's curation tool (ETA: 2 months)</h3></li>
+		<li><h3>Blast interface (ETA: 2 weeks)</h3></li>
+
 	</ul>
 </section>
 
@@ -216,6 +249,7 @@
 		<li><h3>Domain pipeline</h3></li>
 		<li><h3>Sequence, blast database dumping scripts</h3></li>
 		<li><h3>Strain data dumping scripts</h3></li>
+		<li><h3>ETA: 2 months</h3></li>
 	</ul>
 </section>
 
@@ -227,6 +261,7 @@
 		<li><h3>Common unit testing modules</h3></li>
 		<li><h3>Automated deployment</h3></li>
 		<li><h3>Database migration and data patch module</h3></li>
+		<li><h3>ETA: 2 months (excluding VMs)</h3></li>
 	</ul>
 </section>
 
@@ -245,6 +280,11 @@
 	<ul>
 		<li><h3>Static pages --> Web based editor/content management tool</h3></li>
 	</ul>
+</section>
+
+<section class="slide" id="thank-you">
+	<h1>Thank you !!!</h1>
+
 </section>
 
 
