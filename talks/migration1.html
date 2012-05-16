@@ -31,361 +31,222 @@
 <body class="deck-container">
 
 <section class="slide" id="title-slide">
-	<h1>Dictybase migration</h1>
+	<h1>Dictybase migration overview</h1>
 </section>
 
 <section class="slide" id="agenda-slide">
 	<h2>Agenda </h2>
 	<ul>
-		<li> <h3 class='highlight'>Existing seutp </h3></li>
-		<li> <h3> Current problems </h3></li>
-		<li> <h3> Migration tasks and ideas </h3></li>
+		<li> <h3 class='highlight'>Overview of seutp and issues at dictyBase</h3></li>
+		<li> <h3> Broad overview of migration tasks, proposal and ideas </h3></li>
 	<ul>
 </section>
 
 
 <section class="slide" id="architechture-image-slide">
 	<h2> Current architechture (As of today) </h2>
-	<img src="images/dictyBase_multi_architecture2.png" alt="architecture" width="850"
+	<img src="images/dictyBase_architecture/current.png" alt="architecture" width="850"
 	height="800" style="border-color: black; border-style:solid;">
 </section>
 
-<section class="slide" id="Chado-slide">
-  <h2> GMOD Chado database </h2>
-  <ul>
-		<li> <h3> Schema for genomic data </h3></li>
-		<li> <h3> Integration </h3></li>
-		<p> Supports many types of data </p>
-		<p> Integrates many tools </p>
-		<li> <h3> Modular </h3></li>
-		<p> Install any part that is needed </p>
-		<li> <h3> Extensible </h3></li>
-		<li> <h3> Widely used and awesome community support </h3></li>
-  </ul>
+
+<section class="slide" id="architechture-image-slide2">
+	<h2> Architechture after multigenome release </h2>
+	<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
 </section>
 
 
-<section class="slide" id="Chado-slide">
-  <h2> Chado architecture </h2>
-  <img src="images/ChadoModules.png">
-</section>
-
-<section class="slide" id="Chado-slide">
-  <h2> Chado Supported data types </h2>
-  <ul>
-		<li> <h3> Ontology </h3></li>
-		<p> GO,SO,Phenotype ontology,Cell ontology</p>
-		<li> <h3> Genome assembly annotations</h3></li>
-		<p> Contig/Supercontig,  Gene/Transcripts/Chromosome </p>
-		<li> <h3> Genomic variations(SNP etc..)</h3></li>
-		<li> <h3> Omics datasets</h3></li>
-		<li> <h3> Stocks,  phenotypes,  expression</h3></li>
-		<li> <h3> Phylogeny and ortholog</h3></li>
-  </ul>
-</section>
-
-<section class="slide" id="web-application-slide">
-	<h2> MVC web applications at Dictybase </h2>
+<section class="slide" id="web-apps">
+	<h2>Web application(MVC)</h2>
 	<ul>
-		<li> <h3> Gene page: </h3></li>
-		<p>http://dictybase.org/gene/gene_id or name</p>
-		<li> <h3> Gene page cache: </h3></li>
-		<p>http://dictybase.org/gene/cache/gene_id or name</p>
-		<li><h3> Literature:  </h3> </li>
-		<p> http://dictybase.org/publication/id </p>
-		<li> <h3> Ontology: </h3></li>
-		<p> http://dictybase.org/gene/id/go/goid</p>
-		<li> <h3> Fast track curation: </h3></li>
-				<p>http://dictybase.org/tools/curation </p>
-	</ul>
-</section>
-
-<section class="slide" id="cgi-application-slide">
-	<h2> Legacy CGI scripts at Dictybase !!!</h2>
-	<ul>
-		<li> <h3> Search tool</h3></li>
-		<li> <h3> Stock center tool</h3></li>
-		<li><h3> Old curation tool </h3> </li>
-		<li><h3> Id converter tools </h3> </li>
-		<li> <h3> Phenotype curation tool </h3></li>
-		<li> <h3> EST/contig/chromosome pages </h3></li>
-		<li> <h3> Colleague pages </h3></li>
+		<li><h3>Gene page </h3></li>	
+		<li><h3>Publication/GO</h3></li>
+		<li><h3>Yulia's fast-track curation tool</h3></li>
+		<li><h3>BLAST interface</h3></li>
 	</ul>
 </section>
 
 
-<section class="slide" id="web-application-slide">
-	<h2> MVC web applications at Multigenome </h2>
+<section class="slide" id="cgi-scripts">
+	<h2>CGI scripts</h2>
 	<ul>
-		<li> <h3> Gene page: 
-		</h3></li>
-		<p>http://genomes.dictybase.org/gene/common_name/gene_id</p>
-		<li><h3> Literature: </h3> </li>
-		<p>http://genomes.dictybase.org/publication/id </p>
-		<li> <h3> Blast tool:  </h3></li>
-		<p>http://genomes.dictybase.org/tools/blast </p>
-		<li> <h3> Id redirector:  </h3></li>
-		<p> http://genomes.dictybase.org/id/any_dicty_id </p>
+		<li><h3>Stock center</h3></li>	
+		<li><h3>Site Search</h3></li>	
+		<li><h3>Legacy curation tool</h3></li>
+		<li><h3>Phenotype tool</h3></li>
+		<li><h3>Blast webservice</h3></li>
+		<li><h3>Misc. interfaces (abstract submission,  est page etc ..)</h3></li>
+	</ul>
+</section>
+
+<section class="slide" id="old-software">
+	<h2>Core software status</h2>
+	<ul>
+		<li><h3>OS (Ubuntu - Dapper Drake) - 6 yrs old (Unsupported)</h3></li>	
+		<li><h3>Perl 5.8.7 - 7 yrs old (Unsupported)</h3></li>
+		<li><h3>Class::DBI (core for dicty) - 8 yrs old (Not actively developed for last 8
+		years)</h3></li>
 	</ul>
 </section>
 
 
-<section class="slide" id="title-slide">
-	<h1><a href="http://dictybase.org/gene/sadA">A tour of web applications</a></h1>
+<section class="slide" id="old-software2">
+	<h2>Other software status</h3>
+	<ul>
+		<li><h3>prototype.js (Phenotype tool) - 6 yrs old</h3></li>	
+		<li><h3>BioMart - 6 yrs old</h3></li>
+		<li><h3>Apollo - 5 yrs old (Not actively developed)</h3></li>
+		<li><h3>BLAST binaries - 5 yrs old</h3></li>
+	</ul>
 </section>
 
-<section class="slide" id="title-slide">
-	<h1><a href="http://dictybase.org/gene/tools/curation">Fast track curation tool</a></h1>
+
+<section class="slide" id="chado-data-model">
+	<h2>Chado data model</h3>
+	<img src="images/dictyBase_gene_model/single_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
 </section>
 
-<section class="slide" id="title-slide">
-	<h1><a href="http://dictybase.org/gene/sadA">Legacy curation tool(Oh No!!!)</a></h1>
+<section class="slide" id="chado-data-model2">
+	<h2>Chado data model (curated ....)</h3>
+	<img src="images/dictyBase_gene_model/multiple_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+</section>
+
+<section class="slide" id="chado-data-model3">
+	<h2>Chado data model (curated isoforms....)</h3>
+	<img src="images/dictyBase_gene_model/isoform_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+</section>
+
+
+<section class="slide" id="chado-data-model4">
+	<h2>Chado data model (pseudogene ....)</h3>
+	<img src="images/dictyBase_gene_model/pseudogene.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
 </section>
 
 <section class="slide" id="agenda-slide">
 	<h2>Agenda </h2>
 	<ul>
-		<li> <h3>What is Model Organism Database ? </h3></li>
-		<li> <h3>What is <i>Dictyostelium discoideum </i> ? </h3></li>
-		<li> <h3>Quick Tour of Dictybase </h3></li>
-		<li> <h3 >Architecture </h3></li>
-		<li> <h3 class='highlight'> Software Development </h3></li>
-		<li> <h3> Third party tools </h3></li>
-		<li> <h3> Curation at Dictybase </h3></li>
-		<li> <h3> Future projects and directions </h3></li>
+		<li> <h3>Overview of seutp and issues at dictyBase</h3></li>
+		<li> <h3 class='highlight'> Broad overview of migration tasks, proposal and ideas </h3></li>
 	<ul>
 </section>
 
 
-<section class="slide" id="development-slide">
-	<h2> Development environment </h2>
+<section class="slide" id="architechture-image-slide3">
+	<h2> Running architecture </h2>
+	<img src="images/dictyBase_architecture/after_mg_release.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+</section>
+
+
+<section class="slide" id="architechture-image-slide4">
+	<h2> After migration </h2>
+	<img src="images/dictyBase_architecture/after_migration.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+</section>
+
+<section class="slide" id="chado-data-model5">
+	<h2>  Data model after migration </h2>
+	<img src="images/dictyBase_gene_model/corrected_gene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+	<img src="images/dictyBase_gene_model/corrected_pseudogene_model.png" alt="architecture" width="850"
+	height="800" style="border-color: black; border-style:solid;">
+</section>
+
+
+<section class="slide" id="mig-proposal">
+	<h2>Proposed migration tasks</h2>
 	<ul>
-		<li> <h3> Three tier setup </h3></li>
-		<p> Development, staging and production </p>
-		<p> Unix environments,  virtual machine based (at least staging and prod) </p>
+		<li><h3>Migrate data from Oracle (old data model) to PostgreSQL (100% chado)</h3></li>
+		<li><h3>Modify middleware (Modware) to work with new data model</h3></li>
+		<li><h3>Modify web applications (modular MVC thingy) to work with new data model</h3></li>
+		<li><h3>Migrate CGI scripts to web applications (MVC thingy)</h3></li>
+		<li><h3>Rewrite standalone scripts and pipelines</h3></li>
+		<li><h3>Common behind the scene projects(unit testing, deployment ...)</h3></li>
+		<li><h3>Third party tools</h3></li>
+	</ul>
+</section>
 
-		<li> <h3> Software versioning </h3></li>
-		<p> Git in github and private git repo</p>
-		<p> Software release cycle follow gitflow workflow </p>
-		<p> Cvs for legacy code(will retire) </p>
+<section class="slide" id="mig-proposal2">
+	<h2>Data/Database migration(Ora2Pg)</h2>
+	<ul>
+		<li><h3>Pg architecture setup</h3></li>
+		<li><h3>Core genome data model(Ora) => GFF3 dump => Bulk load in Pg</h3></li>
+		<li><h3>Annotatio(Ora) => Free text dump => Load in Pg</h3></li>
+		<li><h3>Strains data(Ora) => dicty::Feature => Modware => Pg</h3></li>
+	</ul>
+</section>
 
-		<li><h3> Database release cycle</h3> </li>
-		<p> Approx at least three releases per year  </p>
+<section class="slide" id="mig-proposal2">
+	<h2>Develope Modware components</h2>
+	<ul>
+		<li><h3>Core genome features</h3></li>
+		<li><h3>Strains/Pnenotype/Genotype ...</h3></li>
+	</ul>
+</section>
+
+<section class="slide" id="mig-proposal3">
+	<h2>CGI to MVC rewrite</h2>
+	<ul>
+		<li><h3>Phenotype tool</h3></li>
+		<li><h3>Stock center</h3></li>
+		<li><h3>Search</h3></li>
+		<li><h3>Blast webservice</h3></li>
 	</ul>
 </section>
 
 
-<section class="slide" id="development-slide">
-	<h2> Developmental practices(Not buzzwords) </h2>
+<section class="slide" id="mig-proposal4">
+	<h2>Web application partial rewrite</h2>
 	<ul>
-		<li> <h3> Modular and loosely connected softwares </h3> </li>
-		<li> <h3> OO practice with reusable parts </h3> </li>
-		<li> <h3> Unit testing </h3> </li>
-		<li> <h3> MVC web applications </h3> </li>
-		<li> <h3> Command line applications </h3> </li>
-		<li> <h3> API documentation </h3> </li>
+		<li><h3>Gene page</h3></li>
+		<li><h3>Merge legacy curation tool into yulia's curation tool</h3></li>
+		<li><h3>Blast interface</h3></li>
 	</ul>
 </section>
 
 
-<section class="slide" id="development-slide">
-	<h2> NOT RECOMMENDED practices(Seriously) </h2>
-	 <ul>
-		<li class='slide'> <h3> CGI scripts with modperl </h3> </li>
-		<li class='slide'> <h3> Lack of unit test </h3> </li>
-		<li class='slide'> <h3> Ad-hoc scripts </h3> </li>
-   </ul>
-</section>
-
-<section class="slide" id="development-slide">
-	<h2> Software stacks used at Dictybase </h2>
-	<li> <h3> Based on Modern Perl </h3></li>
-	<blockquote>
-	<p>
-	  Modern Perl programming,  circa 2011,  relies on the collected wisdom of the entire
-	  Perl ecosystem. Moderl perl is to write elegant,  reliable,  maintainable,  well-tested,
-	  and predictable code.
-	</p>
-	</blockquote>
-</section>
-
-
-<section class="slide" id="development-slide">
-	<h2> Software stacks with Modern Perl </h2>
-	<li> <h3> Toolchain </h3></li>
-	<p> cpanminus </p>
-	<p> local::lib </p>
-	<p> pm-uninstall </p>
-
-	<li> <h3> Testing </h3></li>
-	<p> Test::More and friends </p>
-	<p> Devel::Cover </p>
-	
-	<li> <h3> Logging </h3></li>
-	<p> Log::Log4perl </p>
-
-	<li> <h3> Exceptions </h3></li>
-	<p> Try::Tiny </p>
-</section>
-
-<section class="slide" id="development-slide">
-	<h2> Software stacks with Modern Perl contd ..... </h2>
-	<li> <h3> Object Oriented programming </h3></li>
-	<p> Moose </p>
-
-	<li> <h3> Web development </h3></li>
-	<p> Mojolicious </p>
-	<p> Plack </p>
-
-	<li> <h3> Database development </h3></li>
-	<p> DBIx::Class </p>
-	<p> Bio::Chado::Schema </p>
-	<p> SQL::Translator </p>
-
-
-	<li> <h3> Module development </h3></li>
-	<p> Dist::Zilla </p>
-	<p> Module::Build </p>
-	<p> Perl::Tidy </p>
-	<p> Perl::Critic </p>
-	<p> Carp::Always </p>
-</section>
-
-
-<section class="slide" id="development-slide">
-	<h2> Software stacks with Modern Perl contd ..... </h2>
-	<li> <h3> Date Handling </h3></li>
-	<p> DateTime </p>
-
-	<li> <h3> Scalability </h3></li>
-	<p> CHI </p>
-
-	<li> <h3> Command line tool </h3></li>
-	<p> App::ack </p>
-	<p> Perlbrew </p>
-	<p> MooseX::App::Cmd </p>
-
-</section>
-
-
-<section class="slide" id="development-slide">
-	<h2> Client side software stacks  </h2>
-	<li><h3> YUI 2.x and most of its plugins </h3></li>
-	<li> <h3>JQuery </h3></li>
-	<li><h3> JQuery plugins </h3></li>
-	<p> JQuery UI </p>
-	<p> JQuery Datatable </p>
-</section>
-
-<section class="slide" id="title-slide">
-	<h1>Software modules from Dictybase</h1>
-</section>
-
-
-<section class="slide" id="development-slide">
-	<h2> Modware </h2>
-	<li> <h3>Middleware for chado database </h3></li>
-	<li> <h3> Hides away and abstracts database details </h3></li>
-	<p> Represents common biological concepts </p>
-	<p> Relationships between biological concepts </p>
-	<p> Interpolability with Bioperl </p>
-	<li> <h3> Based on Bio::Chado::Schema and Moose </h3></li>
-	<p> DSL for building classes with different database model </p>
-</section>
-
-
-<section class="slide" id="development-slide">
-  <h2> Other modules </h2>
-	<li> <h3>Module::Build::Chado </h3></li>
-	<p> For testing chado database backed modules and applications </p>
-	<li> <h3>Modware::Chado::Migration </h3></li>
-	<p> Chado database versioning </p>
-	<li> <h3>Modware::Loader </h3></li>
-	<p> Loading modules and scripts for chado database</p>
-</section>
-
-
-<section class="slide" id="development-slide">
-  <h2> Other modules contd .... </h2>
-	<li> <h3>Mojolicious::Plugin::Cache </h3></li>
-	<p> CHI based caching for Mojolicious </p>
-	<li> <h3>Mojolicious::PluginBundle </h3></li>
-	<p> Tag helpers for assets </p>
-	<p> Plugin for Bio::Chado::Schema </p>
-	<p> Plugin for Modware </p>
-</section>
-
-<section class="slide" id="agenda-slide">
-	<h2>Agenda </h2>
+<section class="slide" id="mig-proposal4">
+	<h2>Scripts and pipeline rewrite</h2>
 	<ul>
-		<li> <h3>What is Model Organism Database ? </h3></li>
-		<li> <h3>What is <i>Dictyostelium discoideum </i> ? </h3></li>
-		<li> <h3>Quick Tour of Dictybase </h3></li>
-		<li> <h3 >Architecture </h3></li>
-		<li> <h3> Software Development </h3></li>
-		<li> <h3 class='highlight'> Third party tools </h3></li>
-		<li> <h3> Curation at Dictybase </h3></li>
-		<li> <h3> Future projects and directions </h3></li>
+		<li><h3>Domain pipeline</h3></li>
+		<li><h3>Sequence, blast database dumping scripts</h3></li>
+		<li><h3>Strain data dumping scripts</h3></li>
+	</ul>
+</section>
+
+
+<section class="slide" id="mig-proposal5">
+	<h2>Behind the scene infrastructure projects</h2>
 	<ul>
+		<li><h3>Setting up VMs</h3></li>
+		<li><h3>Common unit testing modules</h3></li>
+		<li><h3>Automated deployment</h3></li>
+		<li><h3>Database migration and data patch module</h3></li>
+	</ul>
+</section>
+
+<section class="slide" id="mig-proposal6">
+	<h2>Third party tools</h2>
+	<ul>
+		<li><h3>Biomart --> Intermine </h3></li>
+		<li><h3>Apollo --> Webapollo ?</h3></li>
+		<li><h3>Pathway tool </h3></li>
+	</ul>
 </section>
 
 
-<section class="slide" id="third-party-slide">
-<h2> Third party tools </h2>
-<ul>
-	<li><h3> Genome browser </h3></li>
-	<p> Gbrowse (1 & 2) </p>
-	<p> jbrowse ? </p>
-	<li><h3> High throughput data mining and retreival </h3></li>
-	<p> dictyMart(Biomart implementation) </p>
-	<p> dictyMine(Intermine implementation) </p>
-</ul>
+<section class="slide" id="mig-proposal6">
+	<h2>Last but not the least</h2>
+	<ul>
+		<li><h3>Static pages --> Web based editor/content management tool</h3></li>
+	</ul>
 </section>
 
-
-<section class="slide" id="third-party-slide">
-<h2> Third party tools contd ...</h2>
-<ul>
-	<li><h3> Apollo genome editor </h3></li>
-	<li><h3> Pathway </h3></li>
-	<p> Pathway tool </p>
-	<p> Reactome ? </p>
-	<li><h3> Promoter analysis tool </h3></li>
-	<li><h3> Protein2goa tool </h3></li>
-</ul>
-</section>
-
-
-<section class="slide" id="third-party-slide">
-<h2> Future ??? ...</h2>
-<ul>
-  <li><h3> OS upgrade </h3></li>
-  <li><h3> Migration from legacy software stacks </h3></li>
-  <li><h3> Gbrowse migration </h3></li>
-  <li><h3> dictyMine implementation </h3></li>
-  <li><h3> Integrating proteome data </h3></li>
-  <li><h3> Deploying multiple genomes (~15) </h3></li>
-</ul>
-</section>
-
-
-<section class="slide" id="third-party-slide">
-<h2> Future Cool Projects ...</h2>
-<ul>
-  <li><h3> Asynchronous/Event based backends </h3></li>
-  <li><h3> Implementing Queue based system </h3></li>
-  <li><h3> NOSQL backends </h3></li>
-  <li><h3> HTML5 based UI(Websockets and eventsource) </h3></li>
-  <li><h3> ElasticSearch based search tool </h3></li>
-  <li><h3> Porting Modware to python and ruby </h3></li>
-  <li><h3> Add yours here ..... </h3></li>
-</ul>
-</section>
-
-
-<section class="slide" id="end-slide">
-	<h1>Thank you for listening</h1>
-</section>
 
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
 <a href="#" class="deck-next-link" title="Next">&#8594;</a>
