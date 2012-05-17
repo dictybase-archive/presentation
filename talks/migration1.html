@@ -199,12 +199,12 @@
 <section class="slide" id="mig-proposal">
 	<h2>Proposed migration tasks</h2>
 	<ul>
-		<li class='slide'>Migrate data from Oracle (old data model) to PostgreSQL (100% chado)</li>
-		<li class='slide'>Modify middleware (Modware) to work with new data model</li>
-		<li class='slide'>Modify web applications (modular MVC thingy) to work with new data model</li>
-		<li class='slide'>Migrate CGI scripts to web applications (MVC thingy)</li>
+		<li class='slide'>Migrate Oracle to PostgreSQL (100% chado)</li>
+		<li class='slide'>Develop Modware for new data model</li>
+		<li class='slide'>Rewrite web applications </li>
+		<li class='slide'>Migrate CGI scripts to web applications </li>
 		<li class='slide'>Rewrite standalone scripts and pipelines</li>
-		<li class='slide'>Common behind the scene projects(unit testing, deployment ...)</li>
+		<li class='slide'>Behind the scene projects(unit testing, deployment ...)</li>
 		<li class='slide'>Third party tools</li>
 	</ul>
 </section>
@@ -212,10 +212,10 @@
 <section class="slide" id="mig-proposal2">
 	<h2>Data/Database migration (Ora2Pg)</h2>
 	<ul>
-		<li><h3>Pg architecture setup </h3></li>
-		<li><h3>Core genome data model(Ora) -> GFF3 dump -> Bulk load in Pg (ETA: 2 weeks)</h3></li>
-		<li><h3>Annotation (Ora) -> Free text dump -> Load in Pg (ETA: 3 weeks)</h3></li>
-		<li><h3>Strains data (Ora) -> dicty::Feature -> Modware -> Pg (ETA: 2 weeks)</h3></li>
+		<li>Pg architecture setup</li>
+		<li>Core genome data model(Ora) --> GFF3 dump --> Bulk load in Pg (ETA: 2 weeks)</li>
+		<li>Annotation (Ora) -> Free text dump -> Load in Pg (ETA: 3 weeks)</li>
+		<li>Strains data (Ora) -> dicty::Feature -> Modware -> Pg (ETA: 2 weeks)</li>
 	</ul>
 </section>
 
