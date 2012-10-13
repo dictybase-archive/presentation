@@ -10,3 +10,6 @@ progress/
 *.snm
 *.toc
 *.gz
+
+latex/migration-plan/*.sty
+latex/migration-plan/*.pdf
