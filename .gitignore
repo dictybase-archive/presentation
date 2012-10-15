@@ -1,3 +1,15 @@
 .DS_Store
 .sass-cache/
 progress/
+
+# LaTeX crap
+*.aux
+*.nav
+*.log
+*.out
+*.snm
+*.toc
+*.gz
+
+latex/migration-plan/*.sty
+latex/migration-plan/*.pdf

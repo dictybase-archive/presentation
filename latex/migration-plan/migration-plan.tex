@@ -1,0 +1,125 @@
+
+\documentclass[hyperref={pdfpagelabels=false}, compress]{beamer}
+%\let\Tiny=\tiny
+
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+%\usepackage[style=footnote-dw]{biblatex}
+%\usepackage[style=apa]{biblatex}
+\usepackage{BeamerColor}
+
+%\usepackage{natbib}
+%\bibliographystyle{apalike}
+
+%\mode<presentation>
+%{  
+	\usetheme{Frankfurt}
+  	\usecolortheme[named=firebrick4]{structure}
+	%\usecolortheme{beaver}
+	%\usecolortheme{lily}
+  	\useinnertheme{circles}
+  	\usefonttheme[onlymath]{serif}
+  	\setbeamercovered{transparent}
+  	\setbeamertemplate{blocks}[rounded][shadow=true]
+	\setbeamertemplate{footline}[page number]{}
+	\setbeamertemplate{navigation symbols}{}
+	%\setbeamerfont{footnote}{size=\tiny}
+%}
+
+%\bibliography{References} 
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%%
+
+\title{dictyBase.org}
+\author{\textit{dictyBase Developers}}
+
+%\date[October 17, 2012]
+\date
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section[Overview]{}
+%\frame{\tableofcontents}
+
+%%%%%%%%%%
+
+\section{}
+\begin{frame}
+	\frametitle{}
+	\begin{block}{Web-apps}
+		\begin{itemize}
+			\item Gene page (dicty and multi-genome)
+			\item Publication/GO
+			\item Yulia's fast-track curation tool
+			\item BLAST interface
+		\end{itemize}
+	\end{block}
+	\begin{block}{CGI scripts}
+		\begin{itemize}
+			\item Stock center
+    			\item Site Search
+    			\item Legacy curation tool
+    			\item Phenotype tool
+    			\item Blast webservice
+    			\item Misc. interfaces (abstract submission, EST page etc.)
+
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Outdated software}
+	\begin{block}{Core software status}
+    		\begin{itemize}
+			\item OS (Ubuntu - Dapper Drake) - 6 yrs old
+			\item Perl 5.8.7 - 7 yrs old
+			\item Class::DBI (core for dicty) - 8 yrs old
+			\end{itemize}
+	\end{block}
+	\begin{block}{Other software status}
+    		\begin{itemize}
+			\item prototype.js (Phenotype tool) - 6 yrs old
+    			\item BioMart - 6 yrs old
+    			\item Apollo - 5 yrs old (dead)
+    			\item BLAST binaries - 5 yrs old
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Proposed migration tasks}
+	
+    	\begin{itemize}
+		\item Migrate data from Oracle (old data model) to PostgreSQL (100\% chado)
+    		\item Modify middleware (Modware) to work with new data model
+    		\item Modify web applications (modular MVC thingy) to work with new data model
+    		\item Migrate CGI scripts to web applications (MVC thingy)
+    		\item Rewrite standalone scripts and pipelines
+    		\item Common behind the scene projects (unit testing, deployment...)
+    		\item Third party tools
+
+	\end{itemize}
+		
+\end{frame}
+
+%%%%%%%%%%
+
+\end{document}
