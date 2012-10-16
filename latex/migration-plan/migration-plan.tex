@@ -46,7 +46,7 @@
 
 %%%%%%%%%%
 
-\title{dictyBase.org}
+\title{Dictybase overhaul}
 \author{\textit{dictyBase Developers}}
 
 %\date[October 17, 2012]
@@ -63,61 +63,120 @@
 
 \section{}
 \begin{frame}
-	\frametitle{}
-	\begin{block}{Web-apps}
-		\begin{itemize}
-			\item Gene page (dicty and multi-genome)
-			\item Publication/GO
-			\item Yulia's fast-track curation tool
-			\item BLAST interface
-		\end{itemize}
-	\end{block}
-	\begin{block}{CGI scripts}
-		\begin{itemize}
-			\item Stock center
-    			\item Site Search
-    			\item Legacy curation tool
-    			\item Phenotype tool
-    			\item Blast webservice
-    			\item Misc. interfaces (abstract submission, EST page etc.)
-
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Outdated software}
-	\begin{block}{Core software status}
-    		\begin{itemize}
-			\item OS (Ubuntu - Dapper Drake) - 6 yrs old
-			\item Perl 5.8.7 - 7 yrs old
-			\item Class::DBI (core for dicty) - 8 yrs old
-			\end{itemize}
-	\end{block}
-	\begin{block}{Other software status}
-    		\begin{itemize}
-			\item prototype.js (Phenotype tool) - 6 yrs old
-    			\item BioMart - 6 yrs old
-    			\item Apollo - 5 yrs old (dead)
-    			\item BLAST binaries - 5 yrs old
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}
 	\frametitle{Proposed migration tasks}
 	
     	\begin{itemize}
-		\item Migrate data from Oracle (old data model) to PostgreSQL (100\% chado)
-    		\item Modify middleware (Modware) to work with new data model
-    		\item Modify web applications (modular MVC thingy) to work with new data model
-    		\item Migrate CGI scripts to web applications (MVC thingy)
+		\item \textbf{ Data migration from Oracle to PostgreSQL [ETA: 2 - 3 months)}
+    		\item Develop Modware
+    		\item Rewrite existing web application
+    		\item Migrate CGI scripts to web applications 
     		\item Rewrite standalone scripts and pipelines
-    		\item Common behind the scene projects (unit testing, deployment...)
+    		\item Behind the scene projects (Unit testing/Deployment etc ..)
     		\item Third party tools
 
 	\end{itemize}
 		
+\end{frame}
+
+\begin{frame}
+    \frametitle{Data Migration - Approaches}
+       \begin{itemize}
+           \item \textbf{\huge Direct} - {\Large Inter Database SQL based}
+           \begin{enumerate}
+              \item Manipulate existing data models in Oracle
+              \item Bulk SQL based transfer to PostgreSQL
+           \end{enumerate}
+           \item \textbf{\huge Indirect} - {\Large Flat file based}
+            \begin{enumerate}
+               \item Dumps data from Oracle to std/nonstd flat file format
+               \item Load in PostgreSQL via loader scripts
+            \end{enumerate}
+       \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Data Migration - Direct Approach}
+       \begin{itemize}
+          \item  \textbf{\Large Manipulate data models}
+           \begin{itemize}
+               \item Core gene model [SB]
+               \item Core gene model annotations [YP]
+               \item Core ontologies \textit{(Excluding GO)} [SB]
+               \item Phenotype, genotype and strain [YP]
+               \item Protein domains
+               \item Homolog/Ortholog
+               \item Regulatory element/Promoter
+           \end{itemize}
+          \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Direct approach - Data transfer}  
+          \begin{itemize}
+               \item Via SQL dump [SB and YP]
+               \item Via Foreign Data Wrappers(FDW) without SQL dump [SB and YP]
+           \end{itemize} 
+         \textbf{\large Unfamiliar ground, needs more leg work to flesh out a clear path}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Direct approach - Problems ??}  
+         \textbf{\Large Jugging with data model}
+          \begin{itemize}
+               \item Almost impossible to update SO(Sequence ontology)
+               \item Updating ontologies (PATO,phonotype,anatomy etc ...) ??
+               \item Migrating half  baked strains data model.  Could be Non-trivial and quite complicated.
+           \end{itemize} 
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Data Migration - Indirect Approach}
+       \begin{itemize}
+          \item  \textbf{\Large Export to flat file}
+           \begin{itemize}
+               \item Core gene models as GFF3 [SB]
+               \item Core gene model annotations [YP]
+               \item Literature annotations [SB]
+               \item Phenotype, genotype and strain data and annotations [YP]
+           \end{itemize}
+          \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Indirect Approach - Data loading}
+  
+  \begin{itemize}
+       \item Ontologies from obo [SB]
+       \item GFF3 loading [SB]
+       \item Gene annotations,Literature annotations [SB/YP]
+       \item GAF loading [YP]
+       \item Phenotype,genotype and strains [YP]
+       \item Protein domains from Interpro flat file
+       \item Homologs from flat file
+  \end{itemize}
+  \textbf{\Large Familiar ground, less leg work}
+  \end{frame}
+  
+  \begin{frame}
+    \frametitle{Indirect approach - Problems ??}  
+         \textbf{\Large Nothing potentially serious or obvious at this point}
+ \end{frame}
+
+\begin{frame}
+    \frametitle{Data Migration - Data Models to consider}
+           \begin{itemize}
+               \item UTRs
+               \item User model (Curators contributions to annotations)
+              \end{itemize}        
+\end{frame}
+
+\begin{frame}
+   \frametitle{Data Migration - Maintenance}
+   \textbf{\Huge PostgreSQL DBA?}
 \end{frame}
 
 %%%%%%%%%%
