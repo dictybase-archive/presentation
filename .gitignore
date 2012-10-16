@@ -1,6 +1,4 @@
 .DS_Store
-.sass-cache/
-progress/
 
 # LaTeX crap
 *.aux
@@ -11,5 +9,18 @@ progress/
 *.toc
 *.gz
 
-latex/migration-plan/*.sty
-latex/migration-plan/*.pdf
+presentations/*.sty
+presentations/*.pdf
+
+# Files from deck.js
+*.js
+README_*
+GPL-license.txt
+MIT-license.txt
+themes/
+talks/
+test/
+introduction/
+latex/
+extensions/
+core/
