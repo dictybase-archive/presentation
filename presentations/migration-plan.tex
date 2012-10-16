@@ -1,0 +1,219 @@
+
+\documentclass[hyperref={pdfpagelabels=false}, compress]{beamer}
+%\let\Tiny=\tiny
+
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+%\usepackage[style=footnote-dw]{biblatex}
+%\usepackage[style=apa]{biblatex}
+\usepackage{BeamerColor}
+
+%\usepackage{natbib}
+%\bibliographystyle{apalike}
+
+\definecolor{dark-gray}{gray}{0.50}
+
+\mode<presentation>
+{  
+	\usetheme{Frankfurt}
+  	%\usecolortheme[named=firebrick4]{structure}
+	%\usecolortheme{seahorse}
+	%\usecolortheme{beaver}
+  	\useinnertheme{circles}
+  	\usefonttheme[onlymath]{serif}
+  	\setbeamercovered{transparent}
+  	\setbeamertemplate{blocks}[rounded][shadow=true]
+	\setbeamertemplate{footline}[page number]{}
+	\setbeamertemplate{navigation symbols}{}
+	%\setbeamerfont{footnote}{size=\tiny}
+}
+
+%\bibliography{References} 
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%%%%%%
+
+\title{Dictybase Overhaul}
+\author{\textit{dictyBase Developers}}
+
+%\date[October 17, 2012]
+\date
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section[Overview]{}
+%\frame{\tableofcontents}
+
+%%%%%%%%%%
+
+\section{Overview}
+
+\subsection{Proposed migration tasks}
+\begin{frame}
+	\frametitle{Proposed migration tasks}
+	
+    	\begin{itemize}
+		\item \textbf{Data migration from \texttt{Oracle} to \texttt{PostgreSQL}\newline [ETA: 2 - 3 months)}
+    		\item Develop \texttt{Modware}
+    		\item Rewrite existing web application
+    		\item Migrate \texttt{CGI} scripts to web applications 
+    		\item Rewrite standalone scripts and pipelines
+    		\item Behind the scene projects (Unit testing/Deployment etc.)
+    		\item Third party tools
+	\end{itemize}
+\end{frame}
+
+\subsection{Data Migration - Approaches}
+\begin{frame}
+    \frametitle{Data Migration - Approaches}
+
+	\begin{block}{\textbf{\huge Direct} - {\Large Inter Database \texttt{SQL} based}}<1->
+		\begin{enumerate}
+			\item Manipulate existing data models in \texttt{Oracle}
+			\item Bulk \texttt{SQL} based transfer to \texttt{PostgreSQL}
+		\end{enumerate}
+	\end{block}
+	
+	\begin{center}
+		\textbf{OR}
+	\end{center}
+	
+	\begin{block}{\textbf{\huge Indirect} - {\Large Flat file based}}<2->
+		\begin{enumerate}
+			\item Dumps data from \texttt{Oracle} to std/nonstd flat file format
+			\item Load in \texttt{PostgreSQL} via loader scripts
+		\end{enumerate}
+	\end{block}
+	  
+\end{frame}
+
+\section{Direct Approach}
+
+\subsection{Data Migration}
+\begin{frame}
+    \frametitle{Data Migration}
+	\textbf{\Large{Manipulate data models in \texttt{Oracle}}}
+	\begin{itemize}
+		\item Core gene model [SB]
+		\item Core gene model annotations [YP]
+		\item Core ontologies \textit{(Excluding GO)} [SB]
+		\item Phenotype, genotype and strain [YP]
+		\item {\color{dark-gray} Protein domains}
+		\item {\color{dark-gray} Homolog/Ortholog}
+		\item {\color{dark-gray} Regulatory element/Promoter}
+	\end{itemize}
+
+\end{frame}
+
+\subsection{Data Transfer}
+\begin{frame}
+    \frametitle{Data Transfer}  
+	\begin{itemize}
+		\item<1-> Via \texttt{SQL} dump [SB and YP]
+		\item<1-> Via Foreign Data Wrappers (FDW)\\ without \texttt{SQL} dump [SB and YP]
+	\end{itemize} 
+	
+	\vspace{1cm}
+
+	\begin{block}{}<2->
+  		\begin{center}
+  			\textbf{\large Unfamiliar ground,\\ needs more leg work to flesh out a clear path}
+		\end{center}
+	\end{block}
+\end{frame}
+
+\subsection{Problems ???}
+\begin{frame}
+    \frametitle{Problems ???}  
+	\textbf{\Large Juggling with data model in \texttt{Oracle}}
+	\begin{itemize}
+		\item Almost impossible to update SO (Sequence ontology)
+		\item Updating ontologies (PATO, phenotype, anatomy etc.) ??
+		\item Migrating half-baked strains data model.\\ Could be Non-trivial and quite complicated.
+	\end{itemize} 
+\end{frame}
+
+
+\section{Indirect Approach}
+
+\subsection{Data Migration}
+\begin{frame}
+    \frametitle{Data Migration} 
+	\textbf{\Large Export to flat file}
+	\begin{itemize}
+		\item Core gene models as \texttt{GFF3} [SB]
+		\item Core gene model annotations [YP]
+		\item Literature annotations [SB]
+		\item Phenotype, genotype and strain data and annotations [YP]
+	\end{itemize}
+        
+\end{frame}
+
+\subsection{Data Loading}
+\begin{frame}
+  	\frametitle{Data Loading}
+  	\begin{itemize}
+		\item Ontologies from obo [SB]
+       	\item GFF3 loading [SB]
+       	\item Gene annotations,Literature annotations [SB/YP]
+       	\item GAF loading [YP]
+       	\item Phenotype,genotype and strains [YP]
+       	\item Protein domains from Interpro flat file
+       	\item Homologs from flat file
+  	\end{itemize}
+  	
+	\begin{block}{}<2->
+  		\begin{center}
+  			\textbf{\Large Familiar ground, less leg work}
+		\end{center}
+	\end{block}
+	
+\end{frame}
+
+\subsection{Problems ???}  
+\begin{frame}
+	\frametitle{Problems ???} 
+	\begin{center} 
+		\textbf{\Large Nothing potentially serious\\ or obvious at this point}
+	\end{center}
+\end{frame}
+
+
+\section{Discussion}
+\subsection{Data Models to consider}
+\begin{frame}
+    \frametitle{Data Models to consider}
+	\begin{itemize}
+		\item UTRs
+		\item Tracking annotations
+	\end{itemize}        
+\end{frame}
+
+\subsection{Database Maintenance}
+\begin{frame}
+   \frametitle{Database Maintenance}
+   \begin{center}
+   		\textbf{\Large PostgreSQL Administration?}
+   	\end{center}
+\end{frame}
+
+%%%%%%%%%%
+
+\end{document}
