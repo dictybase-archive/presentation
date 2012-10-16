@@ -1,18 +1,12 @@
 
 \documentclass[hyperref={pdfpagelabels=false}, compress]{beamer}
-%\let\Tiny=\tiny
 
 \usepackage[T1]{fontenc} 
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{url}
-%\usepackage[style=footnote-dw]{biblatex}
-%\usepackage[style=apa]{biblatex}
 \usepackage{BeamerColor}
-
-%\usepackage{natbib}
-%\bibliographystyle{apalike}
 
 \definecolor{dark-gray}{gray}{0.50}
 
@@ -20,7 +14,7 @@
 {  
 	\usetheme{Frankfurt}
   	%\usecolortheme[named=firebrick4]{structure}
-	%\usecolortheme{seahorse}
+	\usecolortheme{seahorse}
 	%\usecolortheme{beaver}
   	\useinnertheme{circles}
   	\usefonttheme[onlymath]{serif}
@@ -30,8 +24,6 @@
 	\setbeamertemplate{navigation symbols}{}
 	%\setbeamerfont{footnote}{size=\tiny}
 }
-
-%\bibliography{References} 
 
 \newenvironment{changemargin}[2]{%
   \begin{list}{}{%
@@ -52,14 +44,14 @@
 \author{\textit{dictyBase Developers}}
 
 %\date[October 17, 2012]
-\date
+\date{October 17, 2012}
 
 \begin{document}
 
 \frame{\titlepage}
 
 %\section[Overview]{}
-%\frame{\tableofcontents}
+\frame{\tableofcontents}
 
 %%%%%%%%%%
 
@@ -171,10 +163,10 @@
   	\frametitle{Data Loading}
   	\begin{itemize}
 		\item Ontologies from obo [SB]
-       	\item GFF3 loading [SB]
+       	\item \texttt{GFF3} loading [SB]
        	\item Gene annotations,Literature annotations [SB/YP]
-       	\item GAF loading [YP]
-       	\item Phenotype,genotype and strains [YP]
+       	\item \texttt{GAF} loading [YP]
+       	\item Phenotype, genotype and strains [YP]
        	\item Protein domains from Interpro flat file
        	\item Homologs from flat file
   	\end{itemize}
