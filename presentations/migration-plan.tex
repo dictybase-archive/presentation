@@ -8,7 +8,7 @@
 \usepackage{url}
 \usepackage{BeamerColor}
 
-\definecolor{dark-gray}{gray}{0.50}
+\definecolor{dark-gray}{gray}{0.60}
 
 \mode<presentation>
 {  
@@ -40,7 +40,8 @@
 
 %%%%%%%%%%
 
-\title{Dictybase Overhaul}
+\title{\textbf{Dictybase Overhaul}}
+\subtitle{Data Migration}
 \author{\textit{dictyBase Developers}}
 
 %\date[October 17, 2012]
@@ -63,6 +64,7 @@
 	
     	\begin{itemize}
 		\item \textbf{Data migration from \texttt{Oracle} to \texttt{PostgreSQL}\newline [ETA: 2 - 3 months]}
+		\vspace{0.5cm}
     		\item Develop \texttt{Modware}
     		\item Rewrite existing web application
     		\item Migrate \texttt{CGI} scripts to web applications 
@@ -167,8 +169,8 @@
        	\item Gene annotations,Literature annotations [SB/YP]
        	\item \texttt{GAF} loading [YP]
        	\item Phenotype, genotype and strains [YP]
-       	\item Protein domains from Interpro flat file
-       	\item Homologs from flat file
+       	\item {\color{dark-gray} Protein domains from Interpro flat file}
+       	\item {\color{dark-gray} Homologs from flat file}
   	\end{itemize}
   	
 	\begin{block}{}<2->
@@ -194,7 +196,15 @@
     \frametitle{Data Models to consider}
 	\begin{itemize}
 		\item UTRs
+		\begin{itemize}
+			\item Should we maintain UTRs?
+			\item Data model?
+		\end{itemize}
 		\item Tracking annotations
+		\begin{itemize}
+			\item User model to keep track of who made what changes. 
+			\item Can help in community curation too.
+		\end{itemize}
 	\end{itemize}        
 \end{frame}
 
