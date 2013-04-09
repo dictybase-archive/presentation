@@ -75,53 +75,13 @@
     	\item \textbf{Behind the scene projects (Unit testing/Deployment..)\newline [ETA: 2 months]}
 		\item \textbf{Data migration from \texttt{Oracle} to \texttt{PostgreSQL}\newline [ETA: 2 - 3 months]}
 		\vspace{0.5cm}
-    		\item Develop \texttt{Modware}
+    		\item Develop \texttt{Data Layer}
     		\item Rewrite existing web application
     		\item Migrate \texttt{CGI} scripts to web applications 
     		\item Rewrite standalone scripts and pipelines
     		\item Third party tools
 	\end{itemize}
 \end{frame}
-
-
-
-
-\section{Indirect Approach}
-
-\subsection{Data Migration}
-\begin{frame}
-    \frametitle{Data Migration} 
-	\textbf{\Large Export to flat file}
-	\begin{itemize}
-		\item Core gene models as \texttt{GFF3} [SB]
-		\item Core gene model annotations [YP]
-		\item Literature annotations [SB]
-		\item Phenotype, genotype and strain data and annotations [YP]
-	\end{itemize}
-        
-\end{frame}
-
-\subsection{Data Loading}
-\begin{frame}
-  	\frametitle{Data Loading}
-  	\begin{itemize}
-		\item Ontologies from obo [SB]
-       	\item \texttt{GFF3} loading [SB]
-       	\item Gene annotations,Literature annotations [SB/YP]
-       	\item \texttt{GAF} loading [YP]
-       	\item Phenotype, genotype and strains [YP]
-       	\item {\color{dark-gray} Protein domains from Interpro flat file}
-       	\item {\color{dark-gray} Homologs from flat file}
-  	\end{itemize}
-  	
-	\begin{block}{}<2->
-  		\begin{center}
-  			\textbf{\Large Familiar ground, less leg work}
-		\end{center}
-	\end{block}
-	
-\end{frame}
-
 
 \section{Behind the scene}
 \subsection{Overview}
@@ -141,7 +101,8 @@
   \begin{itemize}
       \item Testing framework to work with chado database
       \item Will be used by all of our softwares
-      \item \textbf{ETA: 1 - 2 weeks}
+      \item Develop Module-Build-Chado
+      \item \textbf{ETA: 2 - 3 weeks}
   \end{itemize}
 \end{frame}
 
@@ -152,8 +113,42 @@
       \item Paper trail of database changes
       \item Remain sync with gmod chado changes over time
       \item Integrate our(dictybase) custom additions [annotation tracking]
-      \item \textbf{ETA: 2 weeks}
+      \item Develop either of DBIC-DH/sqitch/alembic for chado
+      \item \textbf{ETA: 2 - 3 weeks}
   \end{itemize}
+\end{frame}
+
+
+\section{Data Migration}
+
+\subsection{Data Export}
+\begin{frame}
+    \frametitle{Data Export From Oracle} 
+	\textbf{\Large Export to flat file}
+	\begin{itemize}
+		\item Core gene models as \texttt{GFF3} [SB]
+		\item Core gene model annotations [YP]
+		\item Literature annotations [SB]
+		\item Phenotype, genotype and strain data and annotations [YP]
+	\end{itemize}
+        
+\end{frame}
+
+\subsection{Data Import}
+\begin{frame}
+  	\frametitle{Data Import To Pg}
+  	\begin{itemize}
+		\item Ontologies from obo [SB]
+       	\item \texttt{GFF3} loading [SB]
+       	\item Gene annotations,Literature annotations [SB/YP]
+       	\item \texttt{GAF} loading [YP]
+       	\item Phenotype, genotype and strains [YP]
+       	\item {\color{dark-gray} Protein domains from Interpro flat file}
+       	\item {\color{dark-gray} Homologs from flat file}
+  	\end{itemize}
+  	
+
+	
 \end{frame}
 
 \section{Discussion}
@@ -183,5 +178,11 @@
 \end{frame}
 
 %%%%%%%%%%
+
+
+
+
+
+
 
 \end{document}
