@@ -13,7 +13,7 @@ presentations/*.sty
 presentations/*.pdf
 
 # Files from deck.js
-*.js
+#*.js
 README_*
 GPL-license.txt
 MIT-license.txt
