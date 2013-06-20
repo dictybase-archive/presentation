@@ -8,6 +8,8 @@
 *.snm
 *.toc
 *.gz
+*.dvi
+*.pdf
 
 presentations/*.sty
 presentations/*.pdf
@@ -21,6 +23,6 @@ themes/
 talks/
 test/
 introduction/
-latex/
+#latex/
 extensions/
 core/
