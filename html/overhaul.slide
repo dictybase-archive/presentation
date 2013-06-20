@@ -1,0 +1,43 @@
+Dictybase overhaul project
+
+Siddhartha Basu
+Yogesh Pandit
+dictybase@northwestern.edu
+http://dictybase.org
+@dictybase
+
+
+* TIMELINE
+
+- Initial Plan: Aug 2012
+- Proposal: Oct 2012
+- Project Started : April 2013
+
+
+* PROJECTS
+
+- Core libraries
+- Data migration
+- Backend data access layer
+- Frontend web applications
+- Batch processing pipelines
+
+
+* PROJECTS(Contd.)
+
+- Server setup
+- Software deployment
+- Third party tools
+- Misc
+
+
+* Core Libraries
+
+- Chado unit testing framework
+- Database versioning
+
+
+
+* Data Migration
+
+Migrating data from Oracle to Postgresql
