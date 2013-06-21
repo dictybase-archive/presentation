@@ -8,23 +8,23 @@ http://dictybase.org
 
 
 * TIMELINE
-
 - Initial Plan: Aug 2012
 - Proposal: Oct 2012
 - Project Started : April 2013
 
+.iframe http://testgenomes.dictybase.org/timeline/index.html 360 1000
+
 
 * PROJECTS
 
+ PRIMARY
 - Core libraries
 - Data migration
 - Backend data access layer
 - Frontend web applications
 - Batch processing pipelines
 
-
-* PROJECTS(Contd.)
-
+ SECONDARY
 - Server setup
 - Software deployment
 - Third party tools
@@ -33,11 +33,82 @@ http://dictybase.org
 
 * Core Libraries
 
-- Chado unit testing framework
+
+- Chado unit testing framework - Done
+Project [[https://github.com/dictyBase/Test-Chado][page]].
+
+  Developer: Siddhartha
+  Software unit testing framework for chado database
+  Reusable by all softwares
+  ETA: 3 weeks Took: 5 weeks
+
+
+
 - Database versioning
+Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
+
+  Developer: Yogesh
+  Paper trail of chado database changes over time
+  Integrate our custom addition and changes
+  ETA: 3 weeks
+
 
 
 
 * Data Migration
 
-Migrating data from Oracle to Postgresql
+ Data export from Oracle [ETA: 1 month]
+- Gene model
+- Gene model annotations
+ Developer: Siddhartha
+
+- Phenotype,genotype and strain data and annotations
+ Developer: Yogesh
+
+Notes
+
+ For the gene models, other genomes are also included
+ All the deleted gene models are excluded
+ Gene models are exported as GFF3
+
+
+
+* Data Migration(Contd)
+
+ Data import in Postgresql [ETA: 1 and half months]
+- Ontologies
+- Gene model and annotations
+- Literature annotations
+  Developer:Sidd
+
+- Gene ontology annotations(GAF)
+- Phenotype, genotype and strains
+  Developer: Yogesh
+
+
+* Backend data access
+
+- Data access specification/resources
+- Develop middleware
+- Develop webservices 
+
+ ETA: 2 and half months
+
+* Frontend web UI
+
+ ETA: 3 months
+
+* Batch processing pipelines
+
+- Intepro domains
+- Ortholog data
+
+ ETA: 1 month
+ Note: Previous development took ~6 months for interpro
+
+
+* Misc
+
+- Menubar design, colors UI design
+- System for static pages
+- Issue tracker
