@@ -54,10 +54,11 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 
 
 
-
 * Data Migration
 
- Data export from Oracle [ETA: 1 month]
+Data export from Oracle
+
+  1 month
 - Gene model
 - Gene model annotations
  Developer: Siddhartha
@@ -75,11 +76,13 @@ Notes
 
 * Data Migration(Contd)
 
- Data import in Postgresql [ETA: 1 and half months]
+Data import in Postgresql 
+
+   1 and half months
 - Ontologies
 - Gene model and annotations
 - Literature annotations
-  Developer:Sidd
+  Developer:Siddhartha
 
 - Gene ontology annotations(GAF)
 - Phenotype, genotype and strains
@@ -88,27 +91,107 @@ Notes
 
 * Backend data access
 
+  2 and half months
 - Data access specification/resources
 - Develop middleware
 - Develop webservices 
 
- ETA: 2 and half months
+  Developer: Siddhartha & Yogesh
+
+Note:
+
+ Most of the data access specification would be done by Siddhartha. 
+ For the rest of project, stock center related 
+ development would handled by Yogesh.
+
 
 * Frontend web UI
 
- ETA: 3 months
+- Rearchitechture/organize with modern tools(twitter bootstrap framework)
+.iframe http://genomes.dictybase.org/assets/include/discoideum/page-header.html 90 1000
+- Make it reusable for all the genomes.
+  Color schemes, layout etc.
+.iframe http://genomes.dictybase.org/assets/include/pallidum/page-header.html 90 1000
+
+ Need external help here. 
+ A basic prototype design is a prerequisite for the rest of 
+ UI projects.
+
+
+* Frontend web UI (Implementing projects)
+ 2 months
+- Gene page
+- Search
+- Literature/Ontology
+ Developer: Siddhartha & Yogesh
+- Blast
+- Curation tool (Gene model & Literature)
+- Colleague(User account) management
+ Developer: Siddhartha 
+- Stock center
+- Strain curation tool
+ Developer: Yogesh
+
 
 * Batch processing pipelines
 
+ 1 month
 - Intepro domains
 - Ortholog data
 
- ETA: 1 month
- Note: Previous development took ~6 months for interpro
+Note
 
+ Previous development took ~6 months for interpro
+
+
+* Server setup
+
+- Buy and install SSL certificates for *dictybase.org*
+  For secure login
+
+- Postgresql server
+  Flesh out maintenance plan
+  Install/setup health monitoring system if any
+  Install/setup load balancing/failover system ?
+
+- Application server
+  Setup completed
+
+- Blast server setup
+  Should be taken care of after *backend* *data* *access* project
+
+
+* Software deployment
+
+  Possibly a week or two
 
 * Misc
 
-- Menubar design, colors UI design
-- System for static pages
+  Need discussion to flesh out a clear plan
+
+- Setup for editing static pages
+  Research options
+  Tailor an existing open source software for our requirement
+  Migrating existing content
 - Issue tracker
+  The software trackers are migrated to github.
+  Order tracking/management would be done through new database and UI.
+  Do we need one actually ?
+- Others
+  Abstract submission
+  dictybase suggestion
+  Weekly newsletter dispatch and archive
+
+
+* Third party tools
+
+Tools that will be retired after overhaul
+
+- Biomart
+- Desktop Apollo
+- Pathway tool (currently nonfunctional)
+
+Possible tools after overhaul
+
+- Intermine
+- Webapollo
