@@ -29,4 +29,5 @@ core/
 .perl-version
 local/
 .carton/
+Rexfile
 
