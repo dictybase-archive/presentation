@@ -59,8 +59,8 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 Data export from Oracle
 
   1 month
-- Gene model
-- Gene model annotations
+- Gene models. *Majority* *completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
+- Gene model annotations. *In* *progress*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
  Developer: Siddhartha
 
 - Phenotype,genotype and strain data and annotations
@@ -101,8 +101,8 @@ Data import in Postgresql
 Note:
 
  Most of the data access specification would be done by Siddhartha. 
- For the rest of project, stock center related 
- development would handled by Yogesh.
+ Stock center related 
+ development would be handled by Yogesh.
 
 
 * Frontend web UI
@@ -113,9 +113,11 @@ Note:
   Color schemes, layout etc.
 .iframe http://genomes.dictybase.org/assets/include/pallidum/page-header.html 90 1000
 
- Need external help here. 
- A basic prototype design is a prerequisite for the rest of 
- UI projects.
+  Need external help here. 
+  A basic prototype design is a prerequisite for the rest of 
+  UI projects.
+
+3rd party interesting service [[http://99designs.com/][99 designs]]
 
 
 * Frontend web UI (Implementing projects)
@@ -161,7 +163,7 @@ Note
   Setup completed
 
 - Blast server setup
-  Should be taken care of after *backend* *data* *access* project
+  Should be taken care of after backend data access project
 
 
 * Software deployment
