@@ -54,17 +54,15 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 
 
 
-* Data Migration
+* Data Migration(Export)
 
-Data export from Oracle
+Export from Oracle
 
-  1 month
+  Total: 1 month
 - Gene models. *Majority* *completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
 - Gene model annotations. *In* *progress*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
+- Literature annotations. Plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-annotations.md][here]].
  Developer: Siddhartha
-
-- Phenotype,genotype and strain data and annotations
- Developer: Yogesh
 
 Notes
 
@@ -72,17 +70,28 @@ Notes
  All the deleted gene models are excluded
  Gene models are exported as GFF3
 
+* Data Migration(Export)
+
+Export from Oracle
+
+- Phenotype,genotype and strain data and annotations
+ Developer: Yogesh
 
 
-* Data Migration(Contd)
+* Data Migration(Import)
 
-Data import in Postgresql 
+Import in Postgresql 
 
-   1 and half months
+   Total: 1 and half months
 - Ontologies
 - Gene model and annotations
 - Literature annotations
   Developer:Siddhartha
+
+
+* Data Migration(Import)
+
+Import in Postgresql 
 
 - Gene ontology annotations(GAF)
 - Phenotype, genotype and strains
