@@ -1,0 +1,164 @@
+Dictybase Overview: A developer's perspective
+
+Siddhartha Basu
+Yogesh Pandit
+dictybase@northwestern.edu
+http://dictybase.org
+@dictybase
+
+* Agenda
+- What is Model Organism Database(MOD) ?
+- Basic overview of _Dictyostelium_ _discoideum_
+- _Quick Tour_
+- dictyBase Infrastructure
+- Software Development
+- Third party tools
+- Running project
+
+* Model Organism Database(MOD)
+
+- Model Organism: Studied to answer biological question 
+- MOD: Central resource about a model organism 
+- MOD contains: 
+   Genomic sequence and annotations
+   Functional annotaions from experiments 
+   GO annotations 
+   Literature 
+
+- Biocuration: Manual review by expert scientists 
+
+
+* Why MOD Anyway ?
+
+- Each has its own niche
+- Organize/Aggregrate vast amount of data
+- Easy retreival
+- Biocuration
+
+* Existing MOD
+
+- Yeast Genome (SGD)
+- Drosophila (Flybase)
+- WormBase
+- Mouse (MGI)/ Rat (RGD)
+- Plant (TAIR)
+- Fish (ZFIN)
+
+  Interestingly none for Human yet ?
+
+
+* D.discoideum overview
+
+-  A social ameoba
+-  Found in soil
+
+.image images/dicty_cycle.png 400 400
+
+* D.discoideum overview
+
+Why _Dictyostelium_ _discoideum_ ?
+
+- Easy genetic manipulation
+- Numerous cellular processes
+  Cell motility/adhesion
+  Chemotaxis
+  Cell differentation
+  Host pathogen interaction
+
+- Wealth of data
+  Sequence genome
+  Large scale studies
+
+* D.discoideum Genome Facts
+
+- 34 Mb genome
+  6 chromosomes, 1 MT chromosome
+  77.5% AT
+
+- Extrachromosomal 88kb palindromic rDNA
+  ~100 copies per nuclues
+
+- Chr2 inverted duplication
+  1.51 Mb
+  Only in sequenced strain AX4
+  608 genes
+
+* dictyBase infrastructure
+
+Major players
+
+- Oracle : GMOD chado schema
+- Virtual Machine: Ubuntu OS
+- Apache Web server
+- Primary Language *Perl*
+- Dictybase: http://dictybase.org
+- Other _dictyostelid_ : http://genomes.dictybase.org
+
+
+* dictyBase infrastructure
+
+ Looks like this!
+
+.image images/dictyBase_architecture/current.png 480 700
+
+
+* dictyBase GMOD chado database
+
+- Open source schema for *biological* *data* [[http://gmod.org/wiki/chado]].
+  Support wide array of data types
+  Uses ontology(controlled vocabulary)
+- Modular architecture
+  - Install separately
+  - Based on biological concept
+- Extensible
+- Integration
+  Tool support
+- Widely used and broader community support
+
+* GMOD chado
+
+ Few Chado Modules
+
+.image images/ChadoModules.png
+
+* GMOD chado datatypes
+
+- Ontology(Controlled vocabulary)
+  GO,SO,Cell ontology,Phenotype ontology ...
+- Genome assembly/annotations
+- Sequence analysis/comparison
+  Blast,ClustalW ...
+- Genomic variations
+- Omics datasets
+- Phylogenetic datasets
+- Stocks,phenotypes,cell lines
+
+* dictyBase softwares
+
+- Public web interfaces
+- Public tools
+- Tools for biocuration
+- Public 3rd party tools
+- Misc
+
+* dictyBase softwares
+
+  Web Interfaces
+- [[http://dictybase.org/db/cgi-bin/search/search.pl?query=calcium&submit=Search+All][Search]]
+- [[http://dictybase.org/gene/sadA][Gene page]]
+- [[http://dictybase.org/publication/13375][Literature]]
+- [[http://dictybase.org/ontology/go/0003779/annotation/page/1][Ontology]]
+- [[http://dictybase.org/StockCenter/StockCenter.html][Stock center]]
+
+  Web tools
+- [[http://dictybase.org/tools/blast][Blast]]
+- [[http://dictybase.org/tools/convert][Id converter]]
+
+
+* dictyBase softwares
+
+  Tools for biocuration
+- Gene curation
+- [[http://dictybase.org/tools/curation][Fast track curation]]
+- Strain curation
+- Litearture curation
