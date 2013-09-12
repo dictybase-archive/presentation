@@ -44,7 +44,7 @@ Project [[https://github.com/dictyBase/Test-Chado][page]].
 
 
 
-- Database versioning
+- Database versioning - Done
 Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 
   Developer: Yogesh
@@ -60,8 +60,7 @@ Export from Oracle
 
   Total: 1 month
 - Gene models. *Majority* *completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
-- Gene model annotations. *In* *progress*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
-- Literature annotations. Plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-annotations.md][here]].
+- Literature annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-annotations.md][here]].
  Developer: Siddhartha
 
 Notes
@@ -74,7 +73,8 @@ Notes
 
 Export from Oracle
 
-- Phenotype,genotype and strain data and annotations
+- Gene model annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
+- Phenotype,genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
  Developer: Yogesh
 
 
@@ -82,10 +82,10 @@ Export from Oracle
 
 Import in Postgresql 
 
-   Total: 1 and half months
-- Ontologies
-- Gene model and annotations
-- Literature annotations
+   Total: Two months
+- Ontologies. *Majority* *completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
+- Gene model and annotations. *In* *progress*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
+- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
   Developer:Siddhartha
 
 
@@ -93,14 +93,14 @@ Import in Postgresql
 
 Import in Postgresql 
 
-- Gene ontology annotations(GAF)
-- Phenotype, genotype and strains
+- Gene ontology annotations(GAF).
+- Phenotype, genotype and strains. *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
   Developer: Yogesh
 
 
 * Backend data access
 
-  2 and half months
+  2 months
 - Data access specification/resources
 - Develop middleware
 - Develop webservices 
