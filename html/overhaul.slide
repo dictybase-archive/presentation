@@ -50,7 +50,7 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
   Developer: Yogesh
   Paper trail of chado database changes over time
   Integrate our custom addition and changes
-  ETA: 3 weeks
+  ETA: 3 weeks. Took (first version): 4 weeks
 
 
 
@@ -73,9 +73,11 @@ Notes
 
 Export from Oracle
 
+  ETA: 2 weeks
 - Gene model annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
-- Phenotype,genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
- Developer: Yogesh
+  Stock export: Took ~ 1 month
+- Phenotype, genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
+  Developer: Yogesh
 
 
 * Data Migration(Import)
@@ -93,9 +95,17 @@ Import in Postgresql
 
 Import in Postgresql 
 
-- Gene ontology annotations(GAF).
-- Phenotype, genotype and strains. *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
+  ETA: 5 weeks
+- Gene ontology annotations (GAF). *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
+  Stock import: Took ~ 1.5 months 
+- Phenotype, genotype and strains. *Completed* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
   Developer: Yogesh
+
+Notes
+
+ Deferred plasmid GanBank/FastA sequence import & linking plasmid to genes
+ Deferred strain-gene linking
+ Gene model annotations will be imported as a part of the GFF3 import
 
 
 * Backend data access
@@ -110,8 +120,7 @@ Import in Postgresql
 Note:
 
  Most of the data access specification would be done by Siddhartha. 
- Stock center related 
- development would be handled by Yogesh.
+ Stock center related development would be handled by Yogesh.
 
 
 * Frontend web UI
