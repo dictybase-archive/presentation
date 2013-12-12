@@ -7,12 +7,22 @@ http://dictybase.org
 @dictybase
 
 
-* TIMELINE
+* PREVIOUS TIMELINE
 - Initial Plan: Aug 2012
 - Proposal: Oct 2012
 - Project Started : April 2013
 
 .iframe http://testgenomes.dictybase.org/timeline/index.html 360 1000
+
+
+* CURRENT TIMELINE
+- Initial Plan: Aug 2012
+- Proposal: Oct 2012
+- Project Started : April 2013
+
+.iframe http://testgenomes.dictybase.org/timeline/index-current.html 361 1000
+
+
 
 
 * PROJECTS
@@ -84,7 +94,7 @@ Import in Postgresql
 
    Total: Two months
 - Ontologies. *Majority* *completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
-- Gene model and annotations. *In* *progress*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
+- Gene model and annotations. *Wrapping* *up*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
 - Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
   Developer:Siddhartha
 
@@ -94,7 +104,7 @@ Import in Postgresql
 Import in Postgresql 
 
 - Gene ontology annotations(GAF).
-- Phenotype, genotype and strains. *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
+- Phenotype, genotype and strains. *Almost* *done(96%)* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
   Developer: Yogesh
 
 

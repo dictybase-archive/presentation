@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Overhaul timeline</title>
+
+    <script type="text/javascript" src="timeline.js"></script>
+    <link rel="stylesheet" type="text/css" href="timeline.css">
+    <style type="text/css">
+        body {font: 10pt arial;}
+        div.orange {
+            background-color: gold;
+            border-color: orange;
+        }
+
+        div.green {
+            background-color: greenyellow;
+            border-color: green;
+        }
+
+        div.magenta {
+            background-color: magenta;
+            border-color: purple;
+            color: white;
+        }
+
+        div.red {
+            background-color: red;
+            border-color: darkred;
+            color: white;
+            font-family: monospace;
+            box-shadow: 0 0 10px gray;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        var timeline;
+        var data;
+
+
+        // Called when the Visualization API is loaded.
+        function drawVisualization() {
+            data = [
+                {
+                'start': new Date(2012,6),
+                'content': 'Dicty meeting and initial plan'
+            },
+            {
+                'start': new Date(2012,7,12,0,0),
+                'content': 'Planned proposal'
+            },
+            {
+                'start': new Date(2012,8,1),
+                'end': new Date(2013,2,30),
+                'content': 'Obo GAF and GBrowse2'
+            },
+            {
+                'start': new Date(2013,3,5,14,0,0),
+                'content': 'Official start of overhaul'
+            },
+            {
+                'start': new Date(),
+                'content': 'We are here',
+                'className': 'orange'
+            },
+            {
+                'start': new Date(2013,3,5),
+                'end': new Date(2013,5,15),
+                'content': 'Core libraries',
+                'className': 'green'
+            },
+            {
+                'start': new Date(2013,5,16),
+                'end': new Date(2013,11,31),
+                'content': 'Data migration',
+                'className': 'red'
+            },
+            {
+                'start': new Date(2014,0,1),
+                'end': new Date(2014,1,28),
+                'content': 'Backend data access'
+            },
+            {
+                'start': new Date(2014,2,1),
+                'end': new Date(2014,3,30),
+                'content': 'Frontend UI'
+            },
+            {
+                'start': new Date(2014,4,1),
+                'end': new Date(2014,4,30),
+                'content': 'Batch script'
+            },
+            {
+                'start': new Date(2014,5,1),
+                'end': new Date(2014,5,15),
+                'content': 'Deploy/server/misc'
+            }
+            ];
+
+            // specify options
+            var options = {
+                "width":  "100%",
+                "height": "300px",
+                "style": "box"
+            };
+
+            // Instantiate our timeline object.
+            timeline = new links.Timeline(document.getElementById('mytimeline'));
+
+            // Draw our timeline with the created data and options
+            timeline.draw(data, options);
+         
+        }
+    </script>
+</head>
+
+<body onload="drawVisualization()">
+<div id="mytimeline"></div>
+
+<!-- Information about where the used icons come from -->
+<p style="color:gray; font-size:10px; font-style:italic;">
+    Icons by <a href="http://dryicons.com" target="_blank" title="Aesthetica 2 Icons by DryIcons" style="color:gray;" >DryIcons</a>
+    and <a href="http://www.tpdkdesign.net" target="_blank" title="Refresh Cl Icons by TpdkDesign.net" style="color:gray;" >TpdkDesign.net</a>
+</p>
+
+</body>
+</html>

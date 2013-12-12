@@ -1,7 +1,6 @@
 Dictybase Overview: A developer's perspective
 
 Siddhartha Basu
-Yogesh Pandit
 dictybase@northwestern.edu
 http://dictybase.org
 @dictybase
@@ -9,7 +8,7 @@ http://dictybase.org
 * Agenda
 - What is Model Organism Database(MOD) ?
 - Basic overview of _Dictyostelium_ _discoideum_
-- _Quick Tour_
+- Quick Tour
 - dictyBase Infrastructure
 - Software Development
 - Third party tools
@@ -162,3 +161,30 @@ Major players
 - [[http://dictybase.org/tools/curation][Fast track curation]]
 - Strain curation
 - Litearture curation
+
+* Development environment
+
+  Three tier setup
+- Development,staging and production
+- Unix environment, VM based(will be LXC container based)
+
+  Software versioning
+- Git in github
+- Follow [[http://nvie.com/posts/a-successful-git-branching-model/][gitflow]] workflow
+
+  Database release cycle
+- 3 releases per year
+
+* Development practices
+- Modular and loosely coupled softwares
+- OO practices
+- Unit testing
+- RESTful backend for data access
+- MVC web applications
+- Command line applications
+- API documentation
+
+
+
+
+
