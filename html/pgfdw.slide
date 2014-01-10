@@ -1,0 +1,22 @@
+Postgres fdw: Use with chado for fun and profit
+
+Siddhartha Basu
+dictybase@northwestern.edu
+http://dictybase.org
+@dictybase
+
+* Agenda
+- What is Postgres FDW(foreign data wrapper)
+- Availability and install
+- General usage and example
+- Using with chado 
+- Writing custom FDW
+
+
+* Using with chado
+- Migrating data from Oracle
+- Getting taxon id
+- Getting unitprot id
+- Getting pubmed info
+- Reading GFF3(reading flat file)
+
