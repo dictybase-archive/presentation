@@ -95,7 +95,7 @@ Import in Postgresql
    Total: One month
 - Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
 - Gene ontology annotations(GAF).
-Developer:Siddhartha
+ Developer:Siddhartha
 
 * Data Migration(Import)
 
