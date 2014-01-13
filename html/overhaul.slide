@@ -7,13 +7,6 @@ http://dictybase.org
 @dictybase
 
 
-* PREVIOUS TIMELINE
-- Initial Plan: Aug 2012
-- Proposal: Oct 2012
-- Project Started : April 2013
-
-.iframe http://testgenomes.dictybase.org/timeline/index.html 360 1000
-
 
 * CURRENT TIMELINE
 - Initial Plan: Aug 2012
@@ -51,7 +44,6 @@ Project [[https://github.com/dictyBase/Test-Chado][page]].
   Software unit testing framework for chado database
   Reusable by all softwares
   ETA: 3 weeks Took: 5 weeks
-
 
 
 - Database versioning - Done
@@ -93,19 +85,25 @@ Export from Oracle
 Import in Postgresql 
 
    Total: Two months
-- Ontologies. *Majority* *completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
-- Gene model and annotations. *Wrapping* *up*, plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
-- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
+- Ontologies. *Done*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
+- Gene model and annotations. *Done*  plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
   Developer:Siddhartha
 
 
 * Data Migration(Import)
 
+   Total: One month
+- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
+- Gene ontology annotations(GAF).
+Developer:Siddhartha
+
+* Data Migration(Import)
+
 Import in Postgresql 
 
-- Gene ontology annotations(GAF).
+- Gene model/annotations leftovers. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
 - Phenotype, genotype and strains. *Almost* *done(96%)* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
-  Developer: Yogesh
+  Developer: ???
 
 
 * Backend data access
