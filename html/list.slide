@@ -10,4 +10,5 @@ http://dictybase.org
 - Dictybase overhaul [[/overhaul.slide][project.]]
 - Dictybase overview [[/overview.slide][project.]]
 - [[/pgfdw.slide][Postgres FDW and chado]]
+- Unit testing of chado application with [[/test-chado.slide][Test-Chado]]
 

@@ -1,0 +1,391 @@
+Test::Chado: A Perl5 testing module for chado database
+
+Siddhartha Basu
+dictybase@northwestern.edu
+http://dictybase.org
+https://github.com/dictyBase/
+@dictybase
+@cybersiddhu
+
+
+* Agenda
+- Background: Why and how ?
+- Perl testing 101
+- Test::Chado getting started
+- Testing with postgresql chado
+- Testing with API/SQL
+- Test::Chado in perl distribution
+- Examples of Quality control workflow
+- Install and documentation
+
+* Background: Why and how ?
+
+* BACKGROUND: dictyBase
+
+- Few points
+
+* Ongoing pain with Oracle backend
+
+- There are ~12 yrs, me involved for ~6 yrs.
+- Extra administrative overhead, hard for daily development.
+- Direct *conflict* with chado schema(synonym table).
+- Needed constant customization of every GMOD tool.
+- Working with two separate schemas.
+- Difficult for software testing.
+
+
+* Aging codebase
+
+- ~12 yrs of codebase, hardly refactored.
+- Stuck with ubuntu dapper 32 bit VM(~6 yrs).
+- Vicious cycle of fixes, rabbit hole of dependencies.
+- Multiple middlewares
+- Hard to write test case for untested code(mod_perl/apache).
+
+
+* Dictybase overhaul project
+
+- Started last year.
+- Data migration from Oracle to Postgresql
+- Upgrade servers and software architechture.
+- Infrastructure change.
+- *Retooling* software stack.
+
+* DictyBase overhaul project
+
+Ongoing data migration.
+
+*Tools* developed
+
+- Chado unit testing framework [[https://github.com/dictyBase/Test-Chado][Test-Chado]].
+- Chado database migration/versioning [[https://github.com/dictyBase/Chado-Sqitch][Chado-Sqitch]].
+- Chado export/import cmd line applications [[https://github.com/dictyBase/Modware-Loader][Modware-Loader]].
+
+*Under* development/Going to start
+
+- HTTP API backend for chado database access.
+- Dictybase public Web UIs(Thin client ajax/websocket).
+
+* Basic Perl testing 101
+
+* Writing a test file
+
+In a script file(.t or even .pl) load test libraries.
+
+.code test.pl /IMPORT OMIT/,/LOAD OMIT/
+
+Write tests with test API
+
+.code test.pl /LOAD OMIT/,/API OMIT/
+
+Run with any of toolchain command
+
+.code test.pl /API OMIT/,/RUN OMIT/
+
+*  Testing with database backend
+
+Load your database interfacing test libraries.
+
+Mandatory *setup* phase
+
+- Create an testing instance of database.
+- Load test data, though optional.
+
+Run database interaction tests.
+
+Recommended *teardown* phase.
+
+- The instance and loaded data should go away.
+- Easy for sqlite, temporary or in memory go away.
+- For the client-server db, it has to be taken care of.
+
+
+* Test::Chado: Getting started
+
+* Features
+
+- Based on Perl toolchain(Test::Builder/Build.PL/Test::More etc..) and BCS.
+- Support Postgresql and Sqlite chado instances , default run in Sqlite.
+- Testing API for chado.
+- Loading of custom chado fixtures(test data).
+- Support for parallel testing.
+
+
+* Do the setup
+
+Write a test file *quickstart.t*
+Load *Test::Chado* libraries.
+
+.code quickstart.pl /IMPORT OMIT/,/LOAD OMIT/
+
+Get chado schema instance
+
+.code quickstart.pl /LOAD OMIT/,/CHADO OMIT/
+
+*What* *happened* *above*
+
+- `Test::Chado:`  Exports chado_schema sub.
+- `chado_schema:`  Loads chado schema by default in an sqlite instance
+- `load_fixture:`  Loads preset fixtures.
+- `$schema:` Gets an instance of BCS.
+
+
+* Write testing code
+
+Test::Chado::Common exports Test::Builder based API
+
+.code quickstart.pl /CHADO OMIT/,/EXAMPLE OMIT/
+
+Add more tests
+
+.code quickstart.pl /EXAMPLE OMIT/,/API OMIT/
+
+Teardown phase
+
+.code quickstart.pl /API OMIT/,/TEARDOWN OMIT/
+
+* Run it
+
+Gives standard test output 
+
+.code quickstart.pl /TEARDOWN OMIT/,/OUTPUT OMIT/
+
+
+* Testing presence of features
+
+Load a test feature with BCS
+
+.code test_feature.pl /FEATURE OMIT/,/TEST OMIT/
+
+
+* Full test code
+
+.code test_feature.pl /TEST OMIT/,/API OMIT/
+.code test_feature.pl /API OMIT/,/OUTPUT OMIT/
+
+* Testing feature locations
+
+Load feature with feature locations
+
+.code test_featureloc.pl /FIXTURE OMIT/,/API OMIT/
+
+* Full test code
+.code test_featureloc.pl /API OMIT/,/RUN OMIT/
+.code test_featureloc.pl /RUN OMIT/,/OUTPUT OMIT/
+
+
+* Testing with postgresql chado instance
+
+* What you need
+
+A running pg server.
+An user with CRUD privileges for pg schema(namespace).
+Separate testing db recommended, but works fine with existing db.
+
+*Set* *three* *env* variables for running tests
+
+- `TC_DSN:` perl's DBI dsn, for example _dbi:Pg:dbname=chado;host=myport;port=myport_ 
+- `TC_USER:` Database user.
+- `TC_PASS:` Database password.
+
+
+* How to run
+
+- One line
+.code pg_run.t /PGENV OMIT/,/EXP OMIT/
+- Export in shell
+.code pg_run.t /EXP OMIT/,/RUN OMIT/
+.code pg_run.t /RUN OMIT/,/OUTPUT OMIT/
+
+* Third party Postgresql service: Heroku
+Sign up here [[www.heroku.com/postgres][www.heroku.com/postgres]] (0$)
+
+.image heroku.png 170 500
+
+Create database
+
+.image heroku_db.png 240 610
+
+
+* Get database credentials
+.image heroku_pgdb.png 330 780
+
+Run tests on heroku backend
+
+.code pg_run.t /OUTPUT OMIT/,/HEROKU OMIT/
+
+* Postgression service
+Available at [[www.postgression.com][www.postgression.com]]
+
+.image postgression.png 280 500
+
+HTTP API to create test pg instance.
+~30 min/database.
+100 req/hr/IP
+
+* Create database
+
+Hit HTTP endpoint
+
+.code pg_run.t /HEROKU OMIT/,/PGAPI OMIT/
+
+Run with Test::Chado
+.code pg_run.t /PGAPI OMIT/,/POSTGRESSION OMIT/
+.code pg_run.t /RUN OMIT/,/OUTPUT OMIT/
+
+
+* Testing with bundled API and raw SQL
+
+* API for cvterm testing 
+
+Exported by `Test::Chado::Cvterm`
+
+.code cvterm_api.t /CVTERM OMIT/,/SYNONYM OMIT/
+.code cvterm_api.t /SYNONYM OMIT/,/RELATIONSHIP
+.code cvterm_api.t /RELATIONSHIP OMIT/,/LIST OMIT/
+
+
+* More counters and checkers
+.code cvterm_api.t /LIST OMIT/,/COUNT OMIT/
+.code cvterm_api.t /COUNT OMIT/,/CHECK OMIT/
+
+* Testing with raw SQL
+
+Bundled API is limited, *Test::DatabaseRow* cpan module is to rescue.
+
+.code raw_sql.t /MODULE OMIT/,/DBROW OMIT/
+.code raw_sql.t /DBROW OMIT/,/PARAM OMIT/
+
+
+* Managing too many SQL
+Throw in *SQL::Library* and write all statement in an ini file.
+
+.code raw_sql.t /PARAM OMIT/,/STATEMENT OMIT/
+.code raw_sql.t /STATEMENT OMIT/,/TEST OMIT/
+
+* Test Fixture (test data)
+
+* Need for fixtures in chado for unit testing
+- Modular design of chado brings data dependencies.
+.image chado_modules.png 300 400
+Most cases, loading data in chado needs pre-populated ontologies.
+Feature always needs cvterms and organism data.
+Loading GAF needs pre-populated features.
+
+* What can fixtures do
+Resolves data dependencies in a sane way.
+
+ For loading obo use cv property fixtures.
+ For feature testing load so and organism fixtures.
+
+Provides a constant dataset to run test against.
+A consistent and reusable way to load test data.
+Bundle and distribute
+
+  Test::Chado uses DBIx::Class::Fixtures
+  DBIC::Fixtures has a defined spec
+  Make a tarball and release
+
+* Loading fixtures with Test::Chado
+
+It ships with a default fixture.
+Load it in setup phase.
+
+  my $schema = chado_schema(load_fixture => 1);
+
+*What* *fixtures* *it* *loads*
+
+- List of default organisms.
+- cv property ontology.
+- Sequence ontology(SO).
+- Relation ontology.
+
+* Loading custom fixtures
+
+It ships with two helper scripts.
+Understands  DBIC::Fixtures specification.
+
+*tc-prepare-fixture:* Generates a fixture tarball from source db.
+*tc-populate-fixture:* Loads the fixture tarball.
+
+Use in setup phase of Test::Chado
+
+  my $schema = chado_schema(custom_fixture => $fixture_tarball);
+
+  ...test....
+  ....test....
+
+  drop_schema();
+
+
+
+* Including Test::Chado in perl distribution
+
+* Put it in Makefile 
+
+.code distribution.pl /MAKEFILE OMIT/,/MAKEEND OMIT/
+ perl Makefile.PL && make test
+
+
+* Put it in Build.PL
+.code distribution.pl /MAKEEND OMIT/,/BUILDEND OMIT/
+ perl Build.PL && ./Build test
+
+
+* Run tests parallelly
+  prove -j6 t
+  HARNESS_OPTIONS=j6 ./Build test
+  HARNESS_OPTIONS=j6 make test
+.code distribution.pl /BUILDEND OMIT/,/PARALLEL OMIT/
+
+* Quality control workflow
+
+* Run continuos integration in Travis-CI
+Pushing in github(develop branch) run automated tests and sends report.
+Runs in *six* perl versions.
+
+.image travis_ci.png 450 970
+
+* Run code coverage in coveralls
+How much of the code is tested.
+Automated coverage report after run in Travis-CI.
+
+.image coveralls.png 440 920
+
+* Install and documentation
+
+* Get from github
+
+*Project:* [[https://github.com/dictyBase/Test-Chado][https://github.com/dictyBase/Test-Chado]].
+*Install*
+
+        cpanm git://github.com/dictyBase/Test-Chado.git
+        cpanm -n git://github.com/dictyBase/Test-Chado.git@v4.1.0
+
+Download tarballs from release page
+
+.html github_release.html
+
+* More resources
+Tutorial style [[https://github.com/dictyBase/Test-Chado/tree/develop/lib/Test/Chado/Manual][documentation]] and [[https://github.com/dictyBase/Test-Chado-Guides][code]].
+
+.html tc-manual.html
+
+.html tc-guides.html
+
+* Things to come
+- More testing API
+  Test::Chado::Pub
+  Test::Chado::Feature
+- Release in CPAN.
+- Integration with pgTAP.
+
+* Acknowlegement
+
+- Project PI: Rex Chisholm
+- DictyBase team
+- GMOD project
+- BCS developers
+- Perl toolchain developers
+- Perl testing culture
+- Github and other free hosting providers
