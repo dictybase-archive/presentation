@@ -20,13 +20,56 @@ https://github.com/dictyBase/
 
 * Background: Why and how ?
 
-* BACKGROUND: dictyBase
+* About DictyBase
 
-- Few points
+- MOD for Dictyostelid for ~12 years. 
+- _Dictyostelium_ _discoideum_ (slime mold) is the canonical organism.
+
+.image images/dicty_stalk.png 250 130
+
+- A social ameoba.
+- Found in soil.
+- Feeds on bacteria.
+
+* D.discoideum genome facts
+
+*34Mb* *genome.*
+
+- 6 chromosomes, 1 MT chromosome
+- 77.5% AT
+
+*Extrachromosomal* *88kb* *palindromic* *rDNA*
+
+- 100 copies per nuclues
+
+*Chr2* *inverted* *duplication*
+
+- 1.51 Mb
+- Only in sequenced strain AX4
+
+*17* *actin* *genes* *codes* *for* *identical* *proteins.*
+
+* Infrastructure and software stack
+
+*Earlier* *stack*
+
+- Oracle instance of chado + custom schema.
+- Ubuntu virtual machine(dapper).
+- Primary language: Perl
+- Legacy Biomart with Oracle backend
+- Pathway tools(hardly works)
+- Apache/mod_perl/cgi_scripts
+
+*Later*
+
+- Apache/FCGI/plack/mojolicious
+- BioSeqFeature DB(Pg) + Gbrowse2
+
+
 
 * Ongoing pain with Oracle backend
 
-- There are ~12 yrs, me involved for ~6 yrs.
+- It exists for last ~12 yrs, i am involved for ~6 yrs.
 - Extra administrative overhead, hard for daily development.
 - Direct *conflict* with chado schema(synonym table).
 - Needed constant customization of every GMOD tool.
@@ -53,7 +96,7 @@ https://github.com/dictyBase/
 
 * DictyBase overhaul project
 
-Ongoing data migration.
+Last phase of data migration.
 
 *Tools* developed
 
@@ -109,6 +152,9 @@ Recommended *teardown* phase.
 - Testing API for chado.
 - Loading of custom chado fixtures(test data).
 - Support for parallel testing.
+
+* Testing stages
+.image images/tc_phases.png 560 300
 
 
 * Do the setup
@@ -230,6 +276,7 @@ Hit HTTP endpoint
 .code pg_run.t /HEROKU OMIT/,/PGAPI OMIT/
 
 Run with Test::Chado
+
 .code pg_run.t /PGAPI OMIT/,/POSTGRESSION OMIT/
 .code pg_run.t /RUN OMIT/,/OUTPUT OMIT/
 
