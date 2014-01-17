@@ -38,10 +38,6 @@ https://github.com/dictyBase/
 - 6 chromosomes, 1 MT chromosome
 - 77.5% AT
 
-*Extrachromosomal* *88kb* *palindromic* *rDNA*
-
-- 100 copies per nuclues
-
 *Chr2* *inverted* *duplication*
 
 - 1.51 Mb
@@ -49,11 +45,16 @@ https://github.com/dictyBase/
 
 *17* *actin* *genes* *codes* *for* *identical* *proteins.*
 
+*Extrachromosomal* *88kb* *palindromic* *rDNA*
+
+- 100 copies per nuclues
+
+
 * Infrastructure and software stack
 
-*Earlier* *stack*
+*Earlier* 
 
-- Oracle instance of chado + custom schema.
+- Oracle instance of chado + custom schema. 
 - Ubuntu virtual machine(dapper).
 - Primary language: Perl
 - Legacy Biomart with Oracle backend
@@ -86,6 +87,15 @@ https://github.com/dictyBase/
 - Hard to write test case for untested code(mod_perl/apache).
 
 
+* Hard to add new features 
+.image images/falling_stack.jpg 
+
+* End of lifecyle
+.image images/falling_house.jpg 550 850
+
+
+
+
 * Dictybase overhaul project
 
 - Started last year.
@@ -103,6 +113,10 @@ Last phase of data migration.
 - Chado unit testing framework [[https://github.com/dictyBase/Test-Chado][Test-Chado]].
 - Chado database migration/versioning [[https://github.com/dictyBase/Chado-Sqitch][Chado-Sqitch]].
 - Chado export/import cmd line applications [[https://github.com/dictyBase/Modware-Loader][Modware-Loader]].
+
+* Testing workflow
+.image images/tc_workflow.png
+
 
 *Under* development/Going to start
 
@@ -386,6 +400,9 @@ Use in setup phase of Test::Chado
 .code distribution.pl /BUILDEND OMIT/,/PARALLEL OMIT/
 
 * Quality control workflow
+
+* Overall setup
+.image images/tc_qc.png 480 950
 
 * Run continuos integration in Travis-CI
 Pushing in github(develop branch) run automated tests and sends report.
