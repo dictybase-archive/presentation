@@ -1,0 +1,28 @@
+Docker: Using it for fun and profit
+
+Siddhartha Basu
+dictybase@northwestern.edu
+http://dictybase.org
+https://github.com/dictyBase/
+@dictybase
+@cybersiddhu
+
+* What can i do with it
+- Automated sys admin tasks
+- Sass / Paas 
+- Speed up development and testing
+
+* Why should I care 
+- Build once, run everywhere
+- Configure once, run everything
+
+* IT evolution
+.image docker_images/evolution_of_it.jpg
+
+* Multiple stacks/environments
+.image docker_images/the_challenge.jpg
+
+* Software shipping
+.image docker_images/docker_container.jpg
+
+
