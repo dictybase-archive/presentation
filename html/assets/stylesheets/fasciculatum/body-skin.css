@@ -1,0 +1,45 @@
+#subnav {
+    background-color:#eadfe5;
+    color           :#336699;
+}
+.threecol {
+	background: #FAF7F9;	/* #f3f2ff; left and right columns background colour */
+}
+.threecol .wrapper-columns {
+	background-image: url(../../images/fasciculatum/waves_bottom.gif);
+}
+.threecol .column-right {	
+	background-image: url(../../images/fasciculatum/waves_top.gif);
+}
+/* title column */
+.content_table_title, .content_table_second_title {
+	background      : #eadfe5;
+    border-color    : #A3BAE9;
+}
+/* section headers */
+.content_table_header {
+	color           : #FFFFFF;
+	background      : #6f465e;
+}
+/* row divider */
+.content_table_data {
+    border-color    : #A3BAE9;
+}
+/* old stuff */
+.header_class {
+    background-color: #4b5f81;
+    color: #FFFFFF;
+}
+.download th, td.sub_header_class {
+    background-color: #936f84;
+}
+.threecol-wide {
+    background: none repeat scroll 0 0 #FAF7F9;
+}
+
+#species-image img{
+   display: block;
+   margin: auto;
+}
+
+

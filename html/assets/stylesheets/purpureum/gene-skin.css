@@ -1,0 +1,23 @@
+/* top divider color */
+.yui-skin-sam .yui-navset .yui-nav, .yui-skin-sam .yui-navset .yui-navset-top .yui-nav {
+    border-color    : #524c81; 
+}
+/* active tab */
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
+.yui-skin-sam .yui-navset .yui-nav .selected a:hover { /* no hover effect for selected */
+    background      :#4C5E81 url(../../images/purpureum/sprite.gif) repeat-x scroll 0 -597px; 
+}
+/* not-active tabs settings */
+.yui-skin-sam .yui-navset .content_tab .yui-nav a,
+.yui-skin-sam .yui-navset .content_tab .yui-navset-top .yui-nav a {
+    background      :#dfe1f6;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+    /* not-active tabs settings */
+    background      :#dfe1f6;
+}
+.yui-skin-sam .general th, .yui-skin-sam .general th a  {
+    background      :#7173a1;    
