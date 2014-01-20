@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title></title><!-- Fonts CSS - Recommended but not required -->
+        <link rel="stylesheet" type="text/css" href="/assets/javascripts/yui/build/fonts/fonts-min.css"><!-- Core + Skin CSS -->
+        <link rel="stylesheet" type="text/css" href="/assets/javascripts/yui/build/menu/assets/skins/sam/menu.css"><!-- Dependencies -->
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/header.css">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/body.css">
+
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/purpureum/header-skin.css">       
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/purpureum/body-skin.css">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/footer.css">
+        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/purpureum/footer-skin.css">
+
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <script type="text/javascript" src="/assets/javascripts/yui/build/yahoo-dom-event/yahoo-dom-event.js">
+</script>
+        <script type="text/javascript" src="/assets/javascripts/yui/build/container/container_core-min.js">
+</script>
+        <script type="text/javascript" src="/assets/javascripts/yui/build/menu/menu-min.js">
+</script>
+        <script type="text/javascript" src="/assets/javascripts/yui/build/animation/animation.js">
+</script>
+        <script type="text/javascript" src="/assets/javascripts/menu.js">
+</script>
+    <script type="text/javascript" src="/assets/javascripts/global.js">
+</script>
+    <script type="text/javascript" src="/assets/javascripts/form_utils.js">
+</script>
+<script type="text/javascript">
+            var searchInput = YAHOO.util.Dom.get('search-input');
+            YAHOO.util.Event.addFocusListener(searchInput.id, function() {
+                var initData = searchInput.value;
+                if (initData.match('use')) {
+                    searchInput.value = '';
+                };
+            });
+        </script>
+
+    </head>
+    <body class="yui-skin-sam">
+        <div id="shadow-container">
+            <div class="shadow">
+                <div id="container-top">
+                    <div id="descriptor">
+                        <b>Dictyostelium purpureum</b>
+                    </div>
+                    <table>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="/discoideum"><img src="/assets/images/purpureum/logo.gif"></a>
+                            </td>
+                            <td colspan="4">
+                             </td>
+                        </tr>
+                        <tr class="menu">
+                            <td>
+                                <img src="/assets/images/purpureum/menu-top-left.gif">
+                            </td>
+                            <td>
+                                <div id="menu-top" class="yuimenubar yuimenubarnav">
+                                    <div class="bd">
+                                        <ul class="first-of-type">
+                                            <li class="yuimenubaritem first-of-type">
+                                                <a class="yuimenubaritemlabel">Genomes</a>
+                                                <div id="genomes" class="yuimenu">
+                                                    <div class="bd">
+                                                       <ul class="first-of-type">
+                                                          <li class="yuimenuitem">
+                                                             <a class="yuimenuitemlabel" href="/discoideum">Dictyostelium discoideum</a>
+                                                          </li>
+                                                          <li class="yuimenuitem">
+                                                             <a class="yuimenuitemlabel" href="/purpureum">Dictyostelium purpureum</a>
+                                                          </li>
+                                                          <li class="yuimenuitem">
+                                                             <a class="yuimenuitemlabel" href="/fasciculatum">Dictyostelium fasciculatum</a>
+                                                          </li>
+                                                          <li class="yuimenuitem">
+                                                             <a class="yuimenuitemlabel" href="/pallidum">Polysphondylium pallidum</a>
+                                                          </li>
+                                                       </ul>
+                                                    </div>
+                                                </div>
+                                            </li>                                            
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel">Genome Browser</a>
+                                                <div id="gbrowse" class="yuimenu">
+                                                    <div class="bd">
+                                                        <ul class="first-of-type">
+                                             							<li class="yuimenuitem">
+                                                						<a class="yuimenuitemlabel"
+                                                      				href="/browser/gbrowse/discoideum?name=6:1..50000">Dictyostelium discoideum</a>
+                                             						 </li>
+																						 						 <li class="yuimenuitem">
+                                                						<a class="yuimenuitemlabel"
+                                                      				href="/browser/gbrowse/purpureum?name=scaffold_193:1..50000">Dictyostelium purpureum</a>
+                                             						</li>
+																						 						<li class="yuimenuitem">
+                                                						<a class="yuimenuitemlabel"
+                                                      				href="/browser/gbrowse/fasciculatum?name=GL883026:1..50000">Dictyostelium fasciculatum</a>
+                                             						</li>
+																						 						<li class="yuimenuitem">
+                                                				<a class="yuimenuitemlabel"
+                                                      			href="/browser/gbrowse/pallidum?name=GL290988:1..50000">Polysphondylium pallidum</a>
+                                             						</li>
+                                                       </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel" href="/tools/blast">BLAST</a>
+                                            </li>
+                                            <li class="yuimenubaritem">
+                                                <a class="yuimenubaritemlabel">Download</a>
+																								 <div id="download" class="yuimenu">
+                                       						<div class="bd">
+                                          					<ul class="first-of-type">
+                                             					<li class="yuimenuitem">
+                                                				<a class="yuimenuitemlabel"
+                                                      		href="/discoideum/current">Dictyostelium discoideum</a>
+                                             					</li>
+																						 					<li class="yuimenuitem">
+                                                				<a class="yuimenuitemlabel"
+                                                      		href="/purpureum/current">Dictyostelium purpureum</a>
+                                             					</li>
+																						 					<li class="yuimenuitem">
+                                                				<a class="yuimenuitemlabel"
+                                                      		href="/fasciculatum/current">Dictyostelium fasciculatum</a>
+                                             					</li>
+																						 					<li class="yuimenuitem">
+                                                				<a class="yuimenuitemlabel"
+                                                      		href="/pallidum/current">Polysphondylium pallidum</a>
+                                             					</li>
+                                          					</ul>
+                                       						</div>
+                                    						</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <img src="/assets/images/purpureum/menu-top-right.gif">
+                            </td>
+                            <td id="about_help">
+                                <a href="/discoideum/db/cgi-bin/dictyBase/suggestion">Contact</a> 
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+     </body>
+</html>

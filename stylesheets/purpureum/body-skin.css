@@ -1,0 +1,57 @@
+#subnav {
+    background-color:#dfe1f6;
+    color           :#524c81;
+}
+.yui-skin-sam .yui-navset .yui-nav a:hover,
+.yui-skin-sam .yui-navset .yui-nav a:focus {
+    /* tab selection */
+    background      :#deecfd url(../../images/purpureum/sprite.gif) repeat-x scroll 0 -353px;
+    outline         :0;
+}
+.threecol {
+	background: #f3f2ff;	/* #f3f2ff; left and right columns background colour */
+}
+.threecol .wrapper-columns {
+	background-image: url(../../images/purpureum/waves_bottom.gif);
+}
+.threecol .column-right {	
+	background-image: url(../../images/purpureum/waves_top.gif);
+}
+/* not-active tabs settings */
+.yui-skin-sam .yui-navset .content_tab .yui-nav a,
+.yui-skin-sam .yui-navset .content_tab .yui-navset-top .yui-nav a {
+    background      :#dfe1f6;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+    /* not-active tabs settings */
+    background      :#dfe1f6;
+}
+.yui-skin-sam .general th, .yui-skin-sam .general th a  {
+    background      :#7173a1;    
+}
+/* title column */
+.content_table_title, .content_table_second_title {
+	background      : #dfe1f6;
+    border-color    : #a8a3e9;
+}
+/* section headers */
+.content_table_header {
+	color           : #FFFFFF;
+	background      : #524c81;
+}
+/* row divider */
+.content_table_data {
+    border-color    : #a8a3e9;
+}
+/* old stuff */
+.header_class {
+    background-color: #4E387E;
+    color: #FFFFFF;
+}
+
+#species-image img{
+	display : block;
+	margin: auto;
+}

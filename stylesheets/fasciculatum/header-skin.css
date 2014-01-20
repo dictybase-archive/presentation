@@ -1,0 +1,24 @@
+.yui-skin-sam .yuimenubar {
+    background      :#6f465e;
+}
+#shadow-container #container-top {
+	border-bottom-color   :#6f465e;
+}
+.yui-skin-sam #container-top #container-help a{
+    color           :#6f465e;
+}
+.yui-skin-sam .yuimenu .bd {
+    background      :#fbf8fa; /*transparent url(/inc/js/yui/build/assets/skins/sam/sprite.png) repeat-x scroll 0 -1700px;*/
+}
+.yui-skin-sam #container-top {
+    background      :#fbf8fa; /*#f4f9ff*/
+}
+.yui-skin-sam #container-top #container-help div{
+    background      :#eadfe5;
+}
+.yui-skin-sam #container-top #menu-top {
+    min-width       :400px;
+}
+.yui-skin-sam .yuimenubar .yuimenubaritem-selected {
+    background: transparent url(../../images/fasciculatum/sprite.gif) repeat-x scroll 0 -303px;
+}
