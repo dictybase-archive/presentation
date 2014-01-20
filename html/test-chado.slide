@@ -25,7 +25,7 @@ https://github.com/dictyBase/
 - MOD for Dictyostelid for ~12 years. 
 - _Dictyostelium_ _discoideum_ (slime mold) is the canonical organism.
 
-.image images/dicty_stalk.png 250 130
+.image assets/presentations/images/dicty_stalk.png 250 130
 
 - A social ameoba.
 - Found in soil.
@@ -88,10 +88,10 @@ https://github.com/dictyBase/
 
 
 * Hard to add new features 
-.image images/falling_stack.jpg 
+.image assets/presentations/images/falling_stack.jpg 
 
 * End of lifecyle
-.image images/falling_house.jpg 550 850
+.image assets/presentations/images/falling_house.jpg 550 850
 
 
 
@@ -115,7 +115,7 @@ Last phase of data migration.
 - Chado export/import cmd line applications [[https://github.com/dictyBase/Modware-Loader][Modware-Loader]].
 
 * Testing workflow
-.image images/tc_workflow.png
+.image assets/presentations/images/tc_workflow.png
 
 
 *Under* development/Going to start
@@ -168,7 +168,7 @@ Recommended *teardown* phase.
 - Support for parallel testing.
 
 * Testing stages
-.image images/tc_phases.png 560 300
+.image assets/presentations/images/tc_phases.png 560 300
 
 
 * Do the setup
@@ -260,15 +260,15 @@ Separate testing db recommended, but works fine with existing db.
 * Third party Postgresql service: Heroku
 Sign up here [[www.heroku.com/postgres][www.heroku.com/postgres]] (0$)
 
-.image heroku.png 170 500
+.image assets/presentations/images/heroku.png 170 500
 
 Create database
 
-.image heroku_db.png 240 610
+.image assets/presentations/images/heroku_db.png 240 610
 
 
 * Get database credentials
-.image heroku_pgdb.png 330 780
+.image assets/presentations/images/heroku_pgdb.png 330 780
 
 Run tests on heroku backend
 
@@ -277,7 +277,7 @@ Run tests on heroku backend
 * Postgression service
 Available at [[www.postgression.com][www.postgression.com]]
 
-.image postgression.png 280 500
+.image assets/presentations/images/postgression.png 280 500
 
 HTTP API to create test pg instance.
 ~30 min/database.
@@ -328,7 +328,7 @@ Throw in *SQL::Library* and write all statement in an ini file.
 
 * Need for fixtures in chado for unit testing
 - Modular design of chado brings data dependencies.
-.image chado_modules.png 300 400
+.image assets/presentations/images/chado_modules.png 300 400
 Most cases, loading data in chado needs pre-populated ontologies.
 Feature always needs cvterms and organism data.
 Loading GAF needs pre-populated features.
@@ -402,19 +402,19 @@ Use in setup phase of Test::Chado
 * Quality control workflow
 
 * Overall setup
-.image images/tc_qc.png 480 950
+.image assets/presentations/images/tc_qc.png 480 950
 
 * Run continuos integration in Travis-CI
 Pushing in github(develop branch) run automated tests and sends report.
 Runs in *six* perl versions.
 
-.image travis_ci.png 450 970
+.image assets/presentations/images/travis_ci.png 450 970
 
 * Run code coverage in coveralls
 How much of the code is tested.
 Automated coverage report after run in Travis-CI.
 
-.image coveralls.png 440 920
+.image assets/presentations/images/coveralls.png 440 920
 
 * Install and documentation
 
@@ -428,14 +428,14 @@ Automated coverage report after run in Travis-CI.
 
 Download tarballs from release page
 
-.html github_release.html
+.html assets/presentations/html/github_release.html
 
 * More resources
 Tutorial style [[https://github.com/dictyBase/Test-Chado/tree/develop/lib/Test/Chado/Manual][documentation]] and [[https://github.com/dictyBase/Test-Chado-Guides][code]].
 
-.html tc-manual.html
+.html assets/presentations/html/tc-manual.html
 
-.html tc-guides.html
+.html assets/presentations/html/tc-guides.html
 
 * Things to come
 - More testing API
