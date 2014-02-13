@@ -38,7 +38,8 @@ http://dictybase.org
 
 
 - Chado unit testing framework - Done
-Project [[https://github.com/dictyBase/Test-Chado][page]].
+Project page in [[https://github.com/dictyBase/Test-Chado][perl]] and [[http://godoc.org/github.com/dictyBase/testchado][golang]].
+Presentation [[http://testgenomes.dictybase.org/test-chado.slide#1][slide]] and [[http://www.youtube.com/watch?v=9F6rskt3JRM][video]]
 
   Developer: Siddhartha
   Software unit testing framework for chado database
@@ -61,7 +62,7 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 Export from Oracle
 
   Total: 1 month
-- Gene models. *Majority* *completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
+- Gene models. *Completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
 - Literature annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-annotations.md][here]].
  Developer: Siddhartha
 
@@ -76,10 +77,11 @@ Notes
 Export from Oracle
 
   ETA: 2 weeks
-- Gene model annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
+- Gene model annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
   Stock export: Took ~ 1 month
 - Phenotype, genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
-  Developer: Yogesh
+  Developer: Yogesh + Siddhartha 
+
 
 
 * Data Migration(Import)
@@ -88,45 +90,41 @@ Import in Postgresql
 
    Total: Two months
 - Ontologies. *Done*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
-- Gene model and annotations. *Done*  plans [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
-  Developer:Siddhartha
+- Gene model and annotations. *Majority(~95%)* *completed*, few pieces left. docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
+  Developer:Siddhartha + David
 
 
-* Data Migration(Import)
+* Data Import
 
    Total: One month
 - Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
 - Gene ontology annotations (GAF). *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
  Developer:Siddhartha
 
-* Data Migration(Import)
 
-Import in Postgresql 
-
-- Gene model/annotations leftovers. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
-- Phenotype, genotype and strains. *Almost* *done(96%)* [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
-  Developer: Yogesh
+* Data Import
+- Phenotype, genotype and strains. *Almost* *done(96%)* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
+  Developer: Yogesh + David
 
 Notes
 
- Deferred plasmid GanBank/FastA sequence import & linking plasmid to genes
- Deferred strain-gene linking
- Gene model annotations will be imported as a part of the GFF3 import
+    Deferred plasmid GanBank/FastA sequence import & linking plasmid to genes
+    Deferred strain-gene linking
+    Gene model annotations will be imported as a part of the GFF3 import
 
 
 * Backend data access
 
   2 months
 - Data access specification/resources
-- Develop middleware
 - Develop webservices 
 
-  Developer: Siddhartha & Yogesh
+  Developer: Siddhartha & David
 
 Note:
 
  Most of the data access specification would be done by Siddhartha. 
- Stock center related development would be handled by Yogesh.
+ Stock center related development would be primarilly handled by David.
 
 
 * Frontend web UI
@@ -149,7 +147,7 @@ Note:
 - Gene page
 - Search
 - Literature/Ontology
- Developer: Siddhartha & Yogesh
+ Developer: Siddhartha & David
 - Blast
 - Curation tool (Gene model & Literature)
 - Colleague(User account) management
@@ -159,7 +157,7 @@ Note:
 * Frontend web UI (Implementing projects)
 - Stock center
 - Strain curation tool
- Developer: Yogesh
+ Developer: David
 
 
 * Batch processing pipelines
