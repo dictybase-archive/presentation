@@ -91,6 +91,7 @@ Import in Postgresql
    Total: Two months
 - Ontologies. *Done*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
 - Gene model and annotations. *Majority(~95%)* *completed*, few pieces left. docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
+- Leftover project [[https://github.com/dictyBase/Migration-Docs/issues/5][specifications]].
   Developer:Siddhartha + David
 
 
