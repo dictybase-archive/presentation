@@ -7,12 +7,12 @@ http://dictybase.org
 
 
 
-* CURRENT TIMELINE
-- Initial Plan: Aug 2012
-- Proposal: Oct 2012
-- Project Started : April 2013
+#* CURRENT TIMELINE
+#- Initial Plan: Aug 2012
+#- Proposal: Oct 2012
+#- Project Started : April 2013
 
-.iframe http://testgenomes.dictybase.org/timeline/index-current.html 361 1000
+# .iframe http://testgenomes.dictybase.org/timeline/index-current.html 361 1000
 
 
 
@@ -24,11 +24,11 @@ http://dictybase.org
 - Data migration
 - Backend data access layer
 - Frontend web applications
-- Batch processing pipelines
+- Batch data integration
 
  SECONDARY
 - Server setup
-- Software deployment
+- Software deployment setup
 - Third party tools
 - Misc
 
@@ -36,7 +36,7 @@ http://dictybase.org
 * Core Libraries
 
 
-- Chado unit testing framework - Done
+- Chado unit testing framework - Working version
 Project page in [[https://github.com/dictyBase/Test-Chado][perl]] and [[http://godoc.org/github.com/dictyBase/testchado][golang]].
 Presentation [[http://testgenomes.dictybase.org/test-chado.slide#1][slide]] and [[http://www.youtube.com/watch?v=9F6rskt3JRM][video]]
 
@@ -46,13 +46,14 @@ Presentation [[http://testgenomes.dictybase.org/test-chado.slide#1][slide]] and 
   ETA: 3 weeks Took: 5 weeks
 
 
-- Database versioning - Done
+- Database versioning - Working version
 Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 
   Developer: Yogesh
   Paper trail of chado database changes over time
   Integrate our custom addition and changes
   ETA: 3 weeks. Took (first version): 4 weeks
+  Extra: ~1 month(Siddhartha) for documentation and cleanup
 
 
 
@@ -87,24 +88,14 @@ Export from Oracle
 
 Import in Postgresql 
 
-   Total: Two months
 - Ontologies. *Done*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
-- Gene model and annotations. *Majority(~95%)* *completed*, few pieces left. docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-annotations-import.md][here]].
-- Leftover project [[https://github.com/dictyBase/Migration-Docs/issues/5][specifications]].
-  Developer:Siddhartha + David
-
-
-* Data Import
-
-   Total: One month
-- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
-- Gene ontology annotations (GAF). *In* *progress* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
- Developer:Siddhartha
+- Gene model and annotations. *Majority(~95%)* *completed*, few pieces [[https://github.com/dictyBase/Migration-Docs/issues/5][left]].
+  Developer:Siddhartha
 
 
 * Data Import
 - Phenotype, genotype and strains. *Almost* *done(96%)* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
-  Developer: Yogesh + David
+  Developer: Yogesh
 
 Notes
 
@@ -113,63 +104,56 @@ Notes
     Gene model annotations will be imported as a part of the GFF3 import
 
 
+* Data Import
+
+- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
+- Gene ontology annotations (GAF). *Working* *version* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
+ Developer:Siddhartha
+
+
+
 * Backend data access
 
-  2 months
 - Data access specification/resources
 - Develop webservices 
-
-  Developer: Siddhartha & David
-
-Note:
-
- Most of the data access specification would be done by Siddhartha. 
- Stock center related development would be primarilly handled by David.
+  Developer: Siddhartha 
 
 
 * Frontend web UI
 
-- Rearchitechture/organize with modern tools(twitter bootstrap framework)
-.iframe http://genomes.dictybase.org/assets/include/discoideum/page-header.html 90 1000
-- Make it reusable for all the genomes.
-  Color schemes, layout etc.
-.iframe http://genomes.dictybase.org/assets/include/pallidum/page-header.html 90 1000
+Dictybase frontpage
 
-  Need external help here. 
-  A basic prototype design is a prerequisite for the rest of 
-  UI projects.
-
-3rd party interesting service [[http://99designs.com/][99 designs]]
+- Header and footer, project [[https://github.com/dictyBase/frontpage-dictybase][here]].
+- Home page.
+- Migration and setup for static pages.
+  Developer: David
 
 
 * Frontend web UI (Implementing projects)
- 2 months
 - Gene page
 - Search
-- Literature/Ontology
- Developer: Siddhartha & David
 - Blast
-- Curation tool (Gene model & Literature)
+- Gene curation tool with live editing
 - Colleague(User account) management
- Developer: Siddhartha 
 
 
 * Frontend web UI (Implementing projects)
+- Literature/Ontology
 - Stock center
-- Strain curation tool
- Developer: David
+- Literature curation tool with live editing
+- Strain curation tool with live editing
+- Phenotype curation tool with live editing
 
 
-* Batch processing pipelines
+* Batch data integration
 
- 1 month
 - Intepro domains
 - Ortholog data
+- EST alignments
 
 Note
 
  Previous development took ~6 months for interpro
-
 
 * Server setup
 
@@ -182,28 +166,19 @@ Note
   Install/setup load balancing/failover system ?
 
 - Application server
-  Setup completed
 
 - Blast server setup
-  Should be taken care of after backend data access project
-
 
 * Software deployment
 
-  Possibly a week or two
+- Initial [[https://github.com/dictyBase/Migration/blob/master/Deploy.md][plan]]
 
 * Misc
 
-  Need discussion to flesh out a clear plan
-
-- Setup for editing static pages
-  Research options
-  Tailor an existing open source software for our requirement
-  Migrating existing content
-- Issue tracker
-  The software trackers are migrated to github.
-  Order tracking/management would be done through new database and UI.
-  Do we need one actually ?
+- Issue trackers. *Working* *version.*
+  Software trackers in github. 
+  User issues in github. 
+  Stock center issues in github. 
 - Others
   Abstract submission
   dictybase suggestion
@@ -217,8 +192,11 @@ Tools that will be retired after overhaul
 - Biomart
 - Desktop Apollo
 - Pathway tool (currently nonfunctional)
+- Gbrowse
 
 Possible tools after overhaul
 
 - Intermine
+- Jbrowse
 - Webapollo
+
