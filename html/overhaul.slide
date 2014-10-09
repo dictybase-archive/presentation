@@ -61,10 +61,10 @@ Project [[https://github.com/dictyBase/App-Sqitch-data][page]].
 
 Export from Oracle
 
-  Total: 1 month
 - Gene models. *Completed,* docs [[http://dictybase.github.io/blog/2013/03/06/exporting-discoideum-annotations][here]].
 - Literature annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-annotations.md][here]].
- Developer: Siddhartha
+- Gene model annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
+- Phenotype, genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
 
 Notes
 
@@ -72,45 +72,38 @@ Notes
  All the deleted gene models are excluded
  Gene models are exported as GFF3
 
+
 * Data Migration(Export)
 
 Export from Oracle
 
-  ETA: 2 weeks
-- Gene model annotations. *Completed* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Gene-models-export.md][here]].
-  Stock export: Took ~ 1 month
-- Phenotype, genotype and strain data and annotations. *Completed*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Export.md][here]].
-  Developer: Yogesh + Siddhartha 
-
-
+- Any leftover, needs verification ???
 
 * Data Migration(Import)
 
 Import in Postgresql 
 
 - Ontologies. *Done*, docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Ontology-import.md][here]].
-- Gene model and annotations. *Majority(~95%)* *completed*, few pieces [[https://github.com/dictyBase/Migration-Docs/issues/5][left]].
-  Developer:Siddhartha
+- Gene model and annotations. *Majority(~95%)* *completed*, few pieces 
+- Phenotype, genotype and strains. *Almost* *done(96%)* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
+- Gene ontology annotations (GPAD). *Working* *version* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
+
 
 
 * Data Import
-- Phenotype, genotype and strains. *Almost* *done(96%)* docs [[https://github.com/dictyBase/Migration-Docs/blob/master/Stock-Import.md][here]].
-  Developer: Yogesh
+
+Import in Postgresql 
+
+- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
+- Leftover from genome [[https://github.com/dictyBase/Migration-Docs/issues/5][annotations]].
+- Leftover from phenotype, genotype, strains.
+- Other leftover, needs verification ???
 
 Notes
 
-    Deferred plasmid GanBank/FastA sequence import & linking plasmid to genes
-    Deferred strain-gene linking
-    Gene model annotations will be imported as a part of the GFF3 import
-
-
-* Data Import
-
-- Literature annotations. *Plans* [[https://github.com/dictyBase/Migration-Docs/blob/master/Literature-export.md][here]].
-- Gene ontology annotations (GAF). *Working* *version* [[https://github.com/dictyBase/Migration-Docs/blob/master/GAF-Import.md][here]]
- Developer:Siddhartha
-
-
+ Deferred plasmid GanBank/FastA sequence import & linking plasmid to genes
+ Deferred strain-gene linking
+ Getting rid of floatigs ??
 
 * Backend data access
 
@@ -136,6 +129,13 @@ Dictybase frontpage
 - Gene curation tool with live editing
 - Colleague(User account) management
 
+Notes
+
+ Federated login (gmail/facebook)??
+ Home grown dictybase login ??
+
+
+
 
 * Frontend web UI (Implementing projects)
 - Literature/Ontology
@@ -155,23 +155,22 @@ Note
 
  Previous development took ~6 months for interpro
 
-* Server setup
+* Server setup and software deployment.
 
 - Buy and install SSL certificates for *dictybase.org*
   For secure login
 
-- Postgresql server
+- Postgresql server, initial [[http://testgenomes.dictybase.org/server.slide#3][plans]]
   Flesh out maintenance plan
   Install/setup health monitoring system if any
   Install/setup load balancing/failover system ?
 
-- Application server
+- Application server, initial [[http://testgenomes.dictybase.org/server.slide#2][plans]]
 
 - Blast server setup
 
-* Software deployment
+- Deployment/setup conventions, initial [[https://github.com/dictyBase/Migration/blob/master/Deploy.md][plans]]
 
-- Initial [[https://github.com/dictyBase/Migration/blob/master/Deploy.md][plan]]
 
 * Misc
 
@@ -183,6 +182,7 @@ Note
   Abstract submission
   dictybase suggestion
   Weekly newsletter dispatch and archive
+  Download page
 
 
 * Third party tools
