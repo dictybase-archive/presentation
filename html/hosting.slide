@@ -1,0 +1,43 @@
+* Server hosting 101
+
+*Dedicated* *hosting*
+
+- Our own server(metal or VM), no sharing.
+- Suited for dictyBase
+
+*Colocated* *hosting*
+
+- We buy and manage hardware.
+- We get space to host our hardware.
+- Our own server(metal or VM), no physical sharing.
+- Not suitable for dictyBase
+
+
+*Cloud*
+
+- Server hardware abstracted, user don't have to worry.
+- Provides intuitive command line/Web interface for adding hardware and services.
+- Best for dictyBase
+
+*VPS*
+
+- Dedicated VM, but shared resources in server. .
+- Not ideal for dictyBase
+
+
+* Cloud hosting(rackspace example 2014) 
+
+- ~10k - 12k per year setup our entire production.
+- ~15k per year staging/production 2 tiers setup.
+- ~20k per year, a dedicated team with set it up.
+
+* Services offered(rackspace 2014:w)
+
+- Basically we get what we want, CPU/RAM/Hard drive no restriction.
+- No meeting, email needed to add hard drive.
+- Easy web interface setup.
+- On demand server setup/teardown.
+- Big community/Developer tools/Tons of documentation.
+- 1-800 number/24 hrs.
+- Fanatic top level customer support.
+- Chicago based data center, low network latency.
