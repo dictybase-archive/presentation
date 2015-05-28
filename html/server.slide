@@ -87,4 +87,32 @@ http://dictybase.org
 - Mount a disk/volume in master.
 - Storage: Yet to decide.
 
+* Open ports
 
+*For* *all* *VMs* *in* *staging* *and* *production*
+
+- Port 22 ssh (internal).  
+- Port 2376 docker over https/tls(internal). The port number is not strict.
+
+*Frontend* *Application*
+
+- Port 80 apache2 (public)
+
+*Third* *Party*
+
+- Port 9595 jbrowse(internal)
+
+
+* Open ports
+
+*Multipurpose* 
+
+- Port 5432 postgresql(internal)
+
+*Master*
+
+- Port 5432 postgresql(internal)
+
+*Slave*
+
+- Port 5432 postgresql(internal)
