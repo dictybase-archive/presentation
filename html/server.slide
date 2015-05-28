@@ -5,133 +5,86 @@ dictybase@northwestern.edu
 http://dictybase.org
 @dictybase
 
-* Overall architechture(draft)
 
-.image assets/presentations/images/overhaul_full_stack.png  400 940
+* Hosting tiers
 
-* Database backend architechture(draft)
+.image assets/presentations/images/hosting_tiers.png 460 920
 
-.image assets/presentations/images/overhaul_backend.png  470 940
+* Overall architechture
 
+.image assets/presentations/images/overhaul_full_stack.png  460 950
 
-* Server hosting 101
+* Application VMs setup
 
-*Cloud*
+.image assets/presentations/images/overhaul_application_setup.png 520 900
 
-- Server hardware abstracted, user don't have to worry.
-- Provides intuitive command line/Web interface for adding hardware and services.
-- Best for dictyBase
+* Database VMs setup
 
-*VPS*
+.image assets/presentations/images/overhaul_backend_setup.png  520 900
 
-- Dedicated VM, but shared resources in server. .
-- Not ideal for dictyBase
+* Database architechture
 
+.image assets/presentations/images/overhaul_backend_architecture.png 520 900
 
-* Server hosting 101
+* Stacking VMs requirements
 
-*Dedicated* *hosting*
+*For* *all* *VMS*
 
-- Our own server(metal or VM), no sharing.
-- Suited for dictyBase
+- 2 vCPU
+- 4 GB RAM
+- 40-60GB storage 
 
-*Colocated* *hosting*
+* Production VMs requirements
 
-- We buy and manage hardware.
-- We get space to host our hardware.
-- Our own server(metal or VM), no physical sharing.
-- Not suitable for dictyBase
+*Frontend* *Application*
 
+- 4 vCPU/4 GB RAM
+- Storage: Yet to decide
 
-* Design idea
+*Third* *Party*
 
-- Asking more upfront, easy to expand without any delay.
-- Have a pool of resources, we could add instantly.
-- Get exact service what's being asked for.
-- Transparent handling of service requested.
-
-
-* Production server hardware requirements
-
-*Application*
-
-- 6-8 cores/4-6GB RAM/1-2 TB storage
-
-*Intermine*
-
-- 4-6-8 cores/6-8GB RAM/100 - 250GB storage
+- 4-6 vCPU/6 GB RAM
+- Storage: Yet to decide
 
 *Blast*
 
-- 6-8 cores/4-6GB RAM/100 - 200GB storage
+- 8 vCPU/4 GB RAM
+- Storage: Yet to decide
 
 
-*Server* *montoring* *stack*
+* Production VMs requirements
 
-* Database server
+*Backend*
+
+- 4 vCPU/4 GB RAM
+- Storage: Yet to decide
+
+*Multipurpose* 
+
+- 2 vCPU/2 GB RAM 
+- Storage: Yet to decide
 
 *Master*
 
-- 4-6 cores/4-8GB RAM/100 - 250GB storage
+- 4-6 vCPU/3-4 GB RAM
+- Storage: Yet to decide
 
-*First* *Slave*
+* Production VMs requirements
 
-- 8-16 cores/8-16GB RAM/50 - 100 GB storage
+*Slave*
 
-*Backup* *storage*
-
-- 250 - 500GB 
-
-
-* NUBIC service
-
-- VPS style hosting(shared VMs with other resources)
-- Our hardware will be added to shared pool.
-- No control over our hardware
-- Max 4 cores/4GB RAM/100 GB storage per VM.
-- No web interface/API to manage resources.
-- No server monitoring stack.
-
-* Ramification of using NUBIC service for dictyBase
-
-- We probably not getting we we ask for.
-- We are confined to what we are given.
-- Hardly any choices or flexibility with any setup.
-- VPS style hosting is absolutely not recommended.
-- We might have to host our read database server somewhere else ??.
-- Failure to get extra storage will be a continuos struggle.
-- Possible slashing of interpro and intermine setup.
-
-* Ongoing unresolved issues
-
-- 1+ month, unable to get 10GB space.
-- Already multiple emails, multiple meetings.
-- Loss of publications retreived from pubmed.
-- Crash of obo/GAF script, delay in obo/GAF update, waste of developers time.
+- 6-8 vCPU/6-8 GB RAM
+- Storage: Yet to decide
 
 
-* What about cloud service ?
+*DictyMine* *Backend*
 
-*Just* *for* *sake* *of* *argument* *if* *we* *use* *rackspace*
+- 4-6 vCPU/6-8 GB RAM
+- Storage: Yet to decide
 
-- ~10k - 12k per year setup our entire production.
-- ~15k per year staging/production 2 tiers setup.
-- ~20k per year, a dedicated team with set it up.
+*Backup*
 
-* What services we get
-
-- Basically we get what we want, CPU/RAM/Hard drive no restriction.
-- No meeting, email needed to add hard drive.
-- Easy web interface setup.
-- On demand server setup/teardown.
-- Big community/Developer tools/Tons of documentation.
-- 1-800 number/24 hrs.
-- Fanatic top level customer support.
-- Chicago based data center, low network latency.
+- Mount a disk/volume in master.
+- Storage: Yet to decide.
 
 
-* My thoughts
-
-- Try [[http://www.rackspace.com][rackspace]] setup for a month at least.
-- Have a clear idea how well/bad cloud setup works.
-- The level of services we could possibly get.
